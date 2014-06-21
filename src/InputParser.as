@@ -13,15 +13,20 @@ package {
 		public function InputParser(input:String):void
 		{
 			input=input.toLowerCase();
-			if(input.indexOf(".")==-1||input.split(".")[0]=="i")
+			if(input.indexOf(".")==-1)
 			{
 				subject=iMagine.api.defaultSubject;
+			}
+			else if(input.split(".")[0]=="i")
+			{
+				subject=iMagine.api.defaultSubject;
+				input=input.split(".")[1];
 			}
 			else
 			{
 				subject=input.split(".")[0];
+				input=input.split(".")[1];
 			}
-			input=input.split(".")[1];
 			action=input.split("(")[0];
 			if(input.indexOf("(")==-1)
 			{
@@ -48,7 +53,7 @@ package {
 			var instance:*=subjectObjects[subjectNames.indexOf(subject)];
 			if(!(action in instance))
 			{
-				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject)];return returns;
+				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;
 			}
 			_returns=instance[action](args);
 			return returns;
