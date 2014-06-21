@@ -5,6 +5,7 @@ package subjects {
 	public class Tony extends Person {
 		public function Tony() {
 			animite=["furok"];
+			name="Tony";
 		}
 	}
 }

@@ -4,6 +4,7 @@ package subjects {
 	 */
 	public class Person {
 		public var animite:Array=[];
+		public var name:String="";
 		public function magine(args:Array):Array
 		{
 			if(args.length==0)
@@ -16,6 +17,12 @@ package subjects {
 				return [Texts.INVALID_ANIMITE.replace("%1",args[0])];
 			}
 			return [Texts.I_MAGINE_SUCCESS.replace("%1",args[0])];
+		}
+		public function changeto(args:Array):Array
+		{
+			args; // ignore args
+			iMagine.api.defaultSubject=name;
+			return [Texts.NOW_SELECTED.replace("%1",name)];
 		}
 	}
 }

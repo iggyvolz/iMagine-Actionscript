@@ -8,5 +8,6 @@ package {
 		public static const I_MAGINE_SUCCESS:String="With this animite, I magine %1!";
 		public static const SUBJECT_NOT_FOUND:String="Who is %1?";
 		public static const ACTION_NOT_FOUND:String="%1: How do I %2?";
+		public static const NOW_SELECTED:String="%1 is now selected!";
 	}
 }
