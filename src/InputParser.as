@@ -1,4 +1,5 @@
 package {
+	import subjects.*;
 	/**
 	 * @author iggyvolz
 	 */
@@ -6,12 +7,15 @@ package {
 		public var subject:String;
 		public var action:String;
 		public var args:Array;
-		public function InputParser(input:String,defaultSubject:String=iMagine.DEFAULT_SUBJECT):void
+		private var _returns:Array=[];
+		public const subjectObjects:Array=[new Tony];
+		public const subjectNames:Array=["tony"];
+		public function InputParser(input:String):void
 		{
 			input=input.toLowerCase();
 			if(input.indexOf(".")==-1||input.split(".")[0]=="i")
 			{
-				subject=defaultSubject;
+				subject=iMagine.api.defaultSubject;
 			}
 			else
 			{
@@ -30,8 +34,28 @@ package {
 				args=input.split(",");
 			}
 		}
+		
+		public function get returns():Array
+		{
+			if(_returns.length>0)
+			{
+				return _returns; // Cache response
+			}
+			if(subjectNames.indexOf(subject)==-1)
+			{
+				_returns = [Texts.SUBJECT_NOT_FOUND.replace("%1",subject)];return returns;
+			}
+			var instance:*=subjectObjects[subjectNames.indexOf(subject)];
+			if(!(action in instance))
+			{
+				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject)];return returns;
+			}
+			_returns=instance[action](args);
+			return returns;
+		}
+		
 		public function toString() : String {
-			return "SUBJECT: "+subject+", ACTION: "+action+", ARGS: "+args.join(",");
+			return returns.join("\n");
 		}
 	}
 }

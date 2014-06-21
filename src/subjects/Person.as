@@ -1,0 +1,21 @@
+package subjects {
+	/**
+	 * @author iggyvolz
+	 */
+	public class Person {
+		public var animite:Array=[];
+		public function magine(args:Array):Array
+		{
+			if(args.length==0)
+			{
+				return [Texts.FUNCTION_REQUIRES_PARAMETER.replace("%1","magine")];
+			}
+			var dreamCreature:String=args[0];
+			if(animite.indexOf(dreamCreature)==-1)
+			{
+				return [Texts.INVALID_ANIMITE.replace("%1",args[0])];
+			}
+			return [Texts.I_MAGINE_SUCCESS.replace("%1",args[0])];
+		}
+	}
+}

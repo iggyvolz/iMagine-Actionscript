@@ -5,21 +5,19 @@ package {
 	 * @author iggyvolz
 	 */
 	public class iMagine extends Sprite {
-		private var _api:iMagine;
+		public static var api:iMagine;
 		public static const DEFAULT_SUBJECT:String="tony";
-		public function get api():iMagine
-		{
-			return _api;
-		}
+		public var defaultSubject:String=DEFAULT_SUBJECT;
 		public function iMagine() {
-			if(_api==null)
+			if(api==null)
 			{
-				_api=this;
+				api=this;
 			}
 			else
 			{
 				return;
 			}
+			trace(new InputParser("i.magine(furok)"));
 		}
 	}
 }
