@@ -5,6 +5,7 @@ package subjects {
 	public class Person {
 		public var animite:Array=[];
 		public var name:String="";
+		public var energy:uint=1000;
 		public function magine(args:Array):Array
 		{
 			if(args.length==0)
@@ -16,6 +17,11 @@ package subjects {
 			{
 				return [Texts.INVALID_ANIMITE.replace("%1",args[0])];
 			}
+			if(energy<100)
+			{
+				return [Texts.NOT_ENOUGH_ENERGY];
+			}
+			energy-=100;
 			return [Texts.I_MAGINE_SUCCESS.replace("%1",args[0])];
 		}
 		public function changeto(args:Array):Array
