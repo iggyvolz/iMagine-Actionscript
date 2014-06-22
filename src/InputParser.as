@@ -8,7 +8,7 @@ package {
 		public var action:String;
 		public var args:Array;
 		private var _returns:Array=[];
-		public const subjectObjects:Array=[new Tony];
+		public static const subjectObjects:Array=[new Tony];
 		public const subjectNames:Array=["tony"];
 		public function InputParser(input:String):void
 		{
