@@ -17,6 +17,11 @@ package subjects {
 			{
 				return [Texts.INVALID_ANIMITE.replace("%1",args[0])];
 			}
+			if(!(InputParser.SUBJECT_OBJECTS[InputParser.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane)
+			{
+				return [Texts.ALREADY_IN_BATTLE.replace("%1",dreamCreature)];
+			}
+			(InputParser.SUBJECT_OBJECTS[InputParser.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane=false;
 			if(energy<100)
 			{
 				return [Texts.NOT_ENOUGH_ENERGY];

@@ -8,8 +8,8 @@ package {
 		public var action:String;
 		public var args:Array;
 		private var _returns:Array=[];
-		public static const subjectObjects:Array=[new Tony];
-		public const subjectNames:Array=["tony"];
+		public static const SUBJECT_OBJECTS:Array=[new Tony,new Edyn,new Strag,new Furok];
+		public static const SUBJECT_NAMES:Array=["tony","edyn","strag","furok"];
 		public function InputParser(input:String):void
 		{
 			input=input.toLowerCase();
@@ -46,11 +46,11 @@ package {
 			{
 				return _returns; // Cache response
 			}
-			if(subjectNames.indexOf(subject)==-1)
+			if(SUBJECT_NAMES.indexOf(subject)==-1)
 			{
 				_returns = [Texts.SUBJECT_NOT_FOUND.replace("%1",subject)];return returns;
 			}
-			var instance:*=subjectObjects[subjectNames.indexOf(subject)];
+			var instance:*=SUBJECT_OBJECTS[SUBJECT_NAMES.indexOf(subject)];
 			if(!(action in instance))
 			{
 				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;
