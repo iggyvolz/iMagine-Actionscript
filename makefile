@@ -1,3 +1,5 @@
+build-droneio:
+	./mxmlc iMagine.as -debug=true -default-size=550,400
 build:
 	mxmlc iMagine.as -debug=true -default-size=550,400
 	mv iMagine.swf ../bin
