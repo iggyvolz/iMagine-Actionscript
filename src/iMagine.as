@@ -17,6 +17,7 @@ package {
 		public var inputText:TextField=new TextField;
 		public var inputTextFormat:TextFormat=new TextFormat;
 		public function iMagine() {
+			CAUSE_ERROR();
 			if(api==null)
 			{
 				api=this;
