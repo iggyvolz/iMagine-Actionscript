@@ -8,7 +8,7 @@ package {
 		public var action:String;
 		public var args:Array;
 		private var _returns:Array=[];
-		public static const SUBJECT_OBJECTS:Array=[new Tony,new Edyn,new Strag,new Furok];
+		public static const SUBJECT_OBJECTS:Array=[new Tony,new Edyn,new Strag,new Furok(SUBJECT_NAMES,SUBJECT_OBJECTS)];
 		public static const SUBJECT_NAMES:Array=["tony","edyn","strag","furok"];
 		public function InputParser(input:String):void
 		{
@@ -39,7 +39,7 @@ package {
 				args=input.split(",");
 			}
 		}
-		
+
 		public function get returns():Array
 		{
 			if(_returns.length>0)
@@ -58,7 +58,7 @@ package {
 			_returns=instance[action](args);
 			return returns;
 		}
-		
+
 		public function toString() : String {
 			return returns.join("\n");
 		}
