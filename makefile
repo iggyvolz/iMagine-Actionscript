@@ -1,9 +1,9 @@
 build-droneio:
-	./flex_sdk/bin/mxmlc iMagine.as -debug=true -default-size=550,400
+	./flex_sdk/bin/mxmlc src/iMagine.as -debug=true -default-size=550,400
 build:
-	mxmlc iMagine.as -debug=true -default-size=550,400
+	mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mv iMagine.swf ../bin
 open:
-	open ../bin/iMagine.swf
+	open bin/iMagine.swf
 debug:
-	fdb ../bin/iMagine.swf
+	fdb bin/iMagine.swf
