@@ -1,10 +1,11 @@
 package subjects {
+	import Subjects;
 	/**
 	 * @author iggyvolz
 	 */
 	public class Person {
 		public var animite:Array=[];
-		public var name:String="";
+		public var personName:String="";
 		public var energy:uint=1000;
 		public function magine(args:Array):Array
 		{
@@ -17,11 +18,11 @@ package subjects {
 			{
 				return [Texts.INVALID_ANIMITE.replace("%1",args[0])];
 			}
-			if(!(InputParser.SUBJECT_OBJECTS[InputParser.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane)
+			if(!(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane)
 			{
 				return [Texts.ALREADY_IN_BATTLE.replace("%1",dreamCreature)];
 			}
-			(InputParser.SUBJECT_OBJECTS[InputParser.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane=false;
+			(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane=false;
 			if(energy<100)
 			{
 				return [Texts.NOT_ENOUGH_ENERGY];
@@ -32,8 +33,8 @@ package subjects {
 		public function changeto(args:Array):Array
 		{
 			args; // ignore args
-			iMagine.api.defaultSubject=name;
-			return [Texts.NOW_SELECTED.replace("%1",name)];
+			iMagine.api.defaultSubject=personName;
+			return [Texts.NOW_SELECTED.replace("%1",personName)];
 		}
 	}
 }

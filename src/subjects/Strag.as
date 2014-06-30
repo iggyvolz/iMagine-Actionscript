@@ -5,7 +5,7 @@ package subjects {
 	public class Strag extends Person {
 		public function Strag() {
 			animite=["Freep"];
-			name="Strag";
+			personName="Strag";
 		}
 	}
 }

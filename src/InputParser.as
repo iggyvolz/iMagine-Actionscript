@@ -1,15 +1,13 @@
 package {
-	import subjects.*;
 	/**
 	 * @author iggyvolz
+	 *
 	 */
 	public class InputParser {
 		public var subject:String;
 		public var action:String;
 		public var args:Array;
 		private var _returns:Array=[];
-		public static const SUBJECT_OBJECTS:Array=[new Tony,new Edyn,new Strag,new Furok(SUBJECT_NAMES,SUBJECT_OBJECTS)];
-		public static const SUBJECT_NAMES:Array=["tony","edyn","strag","furok"];
 		public function InputParser(input:String):void
 		{
 			input=input.toLowerCase();
@@ -46,11 +44,11 @@ package {
 			{
 				return _returns; // Cache response
 			}
-			if(SUBJECT_NAMES.indexOf(subject)==-1)
+			if(Subjects.SUBJECT_NAMES.indexOf(subject)==-1)
 			{
 				_returns = [Texts.SUBJECT_NOT_FOUND.replace("%1",subject)];return returns;
 			}
-			var instance:*=SUBJECT_OBJECTS[SUBJECT_NAMES.indexOf(subject)];
+			var instance:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(subject)];
 			if(!(action in instance))
 			{
 				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;

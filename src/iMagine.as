@@ -4,6 +4,7 @@ package {
 	import flash.events.KeyboardEvent;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
+	import Subjects;
 
 	/**
 	 * @author iggyvolz
@@ -17,6 +18,8 @@ package {
 		public var inputText:TextField=new TextField;
 		public var inputTextFormat:TextFormat=new TextFormat;
 		public function iMagine() {
+			Subjects.SUBJECT_OBJECTS;
+			Subjects.SUBJECT_NAMES;
 			if(api==null)
 			{
 				api=this;
