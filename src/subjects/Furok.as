@@ -23,8 +23,15 @@ package subjects {
 			{
 				return [Texts.INVALID_TARGET.replace("%1",args[0])];
 			}
-			var target:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(target)];
-			target.energy-=100;
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			if(targetObject.energy>100)
+			{
+				targetObject.energy-=100;
+			}
+			else
+			{
+				targetObject.energy=0;
+			}
 			return [Texts.FUROK_ENERGY_BLAST];
 		}
 	}
