@@ -8,6 +8,7 @@ package subjects {
 		public function Furok() {
 			creatureName="Furok";
 			inDreamPlane=true;
+			catchPhrase=Texts.FUROK_CATCH_PHRASE;
 			addEventListener(Event.ENTER_FRAME,setOwner);
 		}
 		public function setOwner(e:*):void
