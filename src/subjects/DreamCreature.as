@@ -7,6 +7,7 @@ package subjects {
 		public var owner:Person;
 		public var inDreamPlane:Boolean=true;
 		public var creatureName:String="";
+		public var catchPhrase:String="";
 		public function tothedreamplane(args:Array):Array
 		{
 			args; //ignore args

@@ -28,7 +28,7 @@ package subjects {
 				return [Texts.NOT_ENOUGH_ENERGY];
 			}
 			energy-=100;
-			return [Texts.I_MAGINE_SUCCESS.replace("%1",args[0])];
+			return [Texts.I_MAGINE_SUCCESS.replace("%1",args[0]),(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).catchPhrase];
 		}
 		public function changeto(args:Array):Array
 		{
