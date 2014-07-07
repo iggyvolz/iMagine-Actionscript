@@ -4,7 +4,7 @@ package subjects {
 	 */
 	public class Edyn extends Person {
 		public function Edyn() {
-			animite=["Ugger"];
+			animite=["ugger"];
 			personName="Edyn";
 		}
 	}

@@ -16,5 +16,7 @@ package {
 		public static const INVALID_TARGET              : String = "%1 is an invalid target!";
 		public static const FUROK_ENERGY_BLAST          : String = "Furok, use Energy Blast!";
 		public static const FUROK_CATCH_PHRASE          : String = "Furok: Let the fur fly!";
+		public static const UGGER_ROOT_REACH            : String = "Ugger, use Root Reach!";
+		public static const UGGER_CATCH_PHRASE          : String = "Ugger: Hang on!";
 	}
 }
