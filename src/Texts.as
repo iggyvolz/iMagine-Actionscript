@@ -18,5 +18,7 @@ package {
 		public static const FUROK_CATCH_PHRASE          : String = "Furok: Let the fur fly!";
 		public static const UGGER_ROOT_REACH            : String = "Ugger, use Root Reach!";
 		public static const UGGER_CATCH_PHRASE          : String = "Ugger: Hang on!";
+		public static const FREEP_SHELL_SHOCK           : String = "Freep, Shell Shock!";
+		public static const FREEP_CATCH_PHRASE          : String = "Freep: Whose noggin needs knockin'?";
 	}
 }
