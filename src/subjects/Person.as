@@ -33,7 +33,7 @@ package subjects {
 		public function changeto(args:Array):Array
 		{
 			args; // ignore args
-			iMagine.api.defaultSubject=personName;
+			iMagine.api.defaultSubject=personName.toLowerCase();
 			return [Texts.NOW_SELECTED.replace("%1",personName)];
 		}
 	}
