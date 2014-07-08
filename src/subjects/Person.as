@@ -7,6 +7,8 @@ package subjects {
 		public var animite:Array=[];
 		public var personName:String="";
 		public var energy:uint=1000;
+		public var type:String="Person";
+		public var isMale:Boolean;
 		public function magine(args:Array):Array
 		{
 			if(args.length==0)

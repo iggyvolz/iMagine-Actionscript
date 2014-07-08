@@ -7,9 +7,11 @@ package {
 		public var subject:String;
 		public var action:String;
 		public var args:Array;
+		public var _energyCache:Array;
 		private var _returns:Array=[];
 		public function InputParser(input:String):void
 		{
+			_energyCache=energyCache;
 			input=input.toLowerCase();
 			if(input.indexOf(".")==-1)
 			{
@@ -54,11 +56,31 @@ package {
 				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;
 			}
 			_returns=instance[action](args);
+			var finalEnergyCache:Array=energyCache;
+			for(var i:uint=0;i<finalEnergyCache.length;i++)
+			{
+				if(_energyCache[i]!=finalEnergyCache[i])
+				{
+					if(Subjects.SUBJECT_OBJECTS[i].type=="Person")
+					{
+						_returns.push(Subjects.SUBJECT_NAMES[i].ucfirst()+((_energyCache[i]<finalEnergyCache[i])?" gained ":" lost ")+Math.abs(_energyCache[i]-finalEnergyCache[i])+" energy!  "+(Subjects.SUBJECT_OBJECTS[i].isMale?"H":"Sh")+"e now has "+Subjects.SUBJECT_OBJECTS[i].energy+" energy!");
+					}
+				}
+			}
 			return returns;
 		}
 
 		public function toString() : String {
 			return returns.join("\n");
+		}
+		public function get energyCache():Array
+		{
+			var toReturn:Array=[];
+			for(var i:uint=0;i<Subjects.SUBJECT_NAMES.length;i++)
+			{
+				toReturn.push(Subjects.SUBJECT_OBJECTS[i].energy);
+			}
+			return toReturn;
 		}
 	}
 }

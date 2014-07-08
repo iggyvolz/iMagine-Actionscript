@@ -6,6 +6,7 @@ package subjects {
 		public function Strag() {
 			animite=["freep"];
 			personName="Strag";
+			isMale=true;
 		}
 	}
 }

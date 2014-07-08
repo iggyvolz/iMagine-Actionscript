@@ -6,6 +6,7 @@ package subjects {
 		public function Edyn() {
 			animite=["ugger"];
 			personName="Edyn";
+			isMale=false;
 		}
 	}
 }

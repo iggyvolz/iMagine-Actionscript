@@ -8,6 +8,7 @@ package subjects {
 		public var inDreamPlane:Boolean=true;
 		public var creatureName:String="";
 		public var catchPhrase:String="";
+		public var type:String="DreamCreature";
 		public function tothedreamplane(args:Array):Array
 		{
 			args; //ignore args

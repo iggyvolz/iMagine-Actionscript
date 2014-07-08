@@ -10,6 +10,7 @@ package {
 	 * @author iggyvolz
 	 */
 	public class iMagine extends Sprite {
+		String.prototype.ucfirst = function() {return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();}
 		public static var api:iMagine;
 		public static const DEFAULT_SUBJECT:String="tony";
 		public var defaultSubject:String=DEFAULT_SUBJECT;

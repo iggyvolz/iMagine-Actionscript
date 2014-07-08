@@ -6,6 +6,7 @@ package subjects {
 		public function Tony() {
 			animite=["furok"];
 			personName="Tony";
+			isMale=true;
 		}
 	}
 }
