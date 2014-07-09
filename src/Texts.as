@@ -23,5 +23,6 @@ package {
 		public static const WELCOME_TEXT                : String = "Welcome to iMagine, version %1!\nFor help, visit iggyvolz.github.io/iMagine.";
 		public static const AHEAD_OF                    : String = "Ahead of %1 by %2 commits.";
 		public static const LAST_COMMIT                 : String = "Last commit: %1, message \"%2\""
+		public static const HAS_ENERGY                  : String = "%1 has %2 energy!"
 	}
 }

@@ -50,7 +50,7 @@ package subjects {
 						{
 							continue;
 						}
-						toReturn.push(Subjects.SUBJECT_OBJECTS[i].personName+" has "+Subjects.SUBJECT_OBJECTS[i].energy+" energy!")
+						toReturn.push(Texts.HAS_ENERGY.replace("%1",Subjects.SUBJECT_OBJECTS[i].personName).replace("%2",Subjects.SUBJECT_OBJECTS[i].energy);
 					}
 					return toReturn;
 				}
