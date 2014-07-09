@@ -7,8 +7,7 @@ package tests
     public function AllTests()
     {
       super();
-      addTest(new TestFirstTry("TestSucceed"));
-      addTest(new TestFirstTry("TestFail"));
+      addTest(new TestMagine("BasicTestMagine"));
     }
   }
 }

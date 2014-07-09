@@ -59,13 +59,13 @@ package subjects {
 		}
 		public function version(args:Array):Array
 		{
-			if(Version.GIT_DESCRIBE.indexOf("-")==-1)
+			if(iMagineVersion.GIT_DESCRIBE.indexOf("-")==-1)
 			{
-				return [Version.GIT_DESCRIBE];
+				return [iMagineVersion.GIT_DESCRIBE];
 			}
-			var version:String=Version.GIT_DESCRIBE.split("-")[0];
-			var plusminus:uint=Version.GIT_DESCRIBE.split("-")[1];
-			return [Texts.AHEAD_OF.replace("%1",version).replace("%2",plusminus),Texts.LAST_COMMIT.replace("%1",Version.COMMIT_HASH).replace("%2",Version.COMMIT_MSG)];
+			var version:String=iMagineVersion.GIT_DESCRIBE.split("-")[0];
+			var plusminus:uint=iMagineVersion.GIT_DESCRIBE.split("-")[1];
+			return [Texts.AHEAD_OF.replace("%1",version).replace("%2",plusminus),Texts.LAST_COMMIT.replace("%1",iMagineVersion.COMMIT_HASH).replace("%2",iMagineVersion.COMMIT_MSG)];
 		}
 	}
 }
