@@ -18,6 +18,6 @@ generate-version-file:
 	git log -1 --pretty=%H|tr -d '\n'>>src/Version.as
 	printf "\";public static const COMMIT_MSG:String=\"">>src/Version.as
 	git log -1 --pretty=%B|tr -d '\n'>>src/Version.as
-	printf "\";public static const GIT_DESCRIBE=\"">>src/Version.as
+	printf "\";public static const GIT_DESCRIBE:String=\"">>src/Version.as
 	git describe --tags|tr -d '\n'>>src/Version.as
 	printf "\"}}">>src/Version.as
