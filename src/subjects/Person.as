@@ -47,12 +47,13 @@ package subjects {
 					var toReturn:Array=[];
 					for(var i:uint=0;i<Subjects.SUBJECT_OBJECTS.length;i++)
 					{
-						if(Subjects.SUBJECT_OBJECTS[i].type!="person")
+						if(Subjects.SUBJECT_OBJECTS[i].type!="Person")
 						{
 							continue;
 						}
 						toReturn.push(Subjects.SUBJECT_OBJECTS[i].personName+" has "+Subjects.SUBJECT_OBJECTS[i].energy+" energy!")
 					}
+					return toReturn;
 				}
 			}
 			return [personName+" has "+energy+" energy!"];
