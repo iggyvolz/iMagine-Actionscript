@@ -67,7 +67,7 @@ package {
 					}
 				}
 			}
-			return returns;
+			return _returns;
 		}
 
 		public function toString() : String {
