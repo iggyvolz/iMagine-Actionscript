@@ -21,5 +21,7 @@ package {
 		public static const FREEP_SHELL_SHOCK           : String = "Freep, Shell Shock!";
 		public static const FREEP_CATCH_PHRASE          : String = "Freep: Whose noggin needs knockin'?";
 		public static const WELCOME_TEXT                : String = "Welcome to iMagine, version %1!\nFor help, visit iggyvolz.github.io/iMagine.";
+		public static const AHEAD_OF                    : String = "Ahead of %1 by %2 commits.";
+		public static const LAST_COMMIT                 : String = "Last commit: %1, message \"%2\""
 	}
 }

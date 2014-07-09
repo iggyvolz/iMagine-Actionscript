@@ -63,7 +63,10 @@ package subjects {
 			{
 				return [Version.GIT_DESCRIBE];
 			}
-			return [];
+			//v0.02-1-gd62b89a
+			var version:String=Version.GIT_DESCRIBE.split("-")[0];
+			var plusminus:uint=Version.GIT_DESCRIBE.split("-")[1];
+			return [Texts.AHEAD_OF.replace("%1",version).replace("%2",plusminus),Texts.LAST_COMMIT.replace("%1",Version.COMMIT_HASH).replace("%2",Version.COMMIT_MSG)];
 		}
 	}
 }
