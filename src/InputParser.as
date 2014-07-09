@@ -51,7 +51,7 @@ package {
 				_returns = [Texts.SUBJECT_NOT_FOUND.replace("%1",subject)];return returns;
 			}
 			var instance:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(subject)];
-			if(!(action in instance))
+			if(!(action in instance)||(typeof (instance[action])!="function"))
 			{
 				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;
 			}
