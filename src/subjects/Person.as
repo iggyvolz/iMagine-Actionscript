@@ -61,7 +61,7 @@ package subjects {
 		{
 			if(Version.GIT_DESCRIBE.indexOf("-")==-1)
 			{
-				return Version.GIT_DESCRIBE];
+				return [Version.GIT_DESCRIBE];
 			}
 			return [];
 		}
