@@ -20,5 +20,6 @@ package {
 		public static const UGGER_CATCH_PHRASE          : String = "Ugger: Hang on!";
 		public static const FREEP_SHELL_SHOCK           : String = "Freep, Shell Shock!";
 		public static const FREEP_CATCH_PHRASE          : String = "Freep: Whose noggin needs knockin'?";
+		public static const WELCOME_TEXT                : String = "Welcome to iMagine, version %1!\nFor help, visit iggyvolz.github.io/iMagine.";
 	}
 }

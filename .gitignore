@@ -1,3 +1,4 @@
 .project
 .settings
 bin
+src/Version.as

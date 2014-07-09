@@ -27,5 +27,9 @@ package subjects {
 		{
 			owner.energy=val;
 		}
+		public function version(args:Array):Array
+		{
+			return owner.version(args);
+		}
 	}
 }

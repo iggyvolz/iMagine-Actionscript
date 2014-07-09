@@ -1,5 +1,4 @@
 package subjects {
-	import Subjects;
 	/**
 	 * @author iggyvolz
 	 */
@@ -57,6 +56,14 @@ package subjects {
 				}
 			}
 			return [personName+" has "+energy+" energy!"];
+		}
+		public function version(args:Array):Array
+		{
+			if(Version.GIT_DESCRIBE.indexOf("-")==-1)
+			{
+				return Version.GIT_DESCRIBE];
+			}
+			return [];
 		}
 	}
 }
