@@ -12,12 +12,12 @@ test:
 	mv src/Tests.swf ./bin
 	fdb bin/Tests.swf
 generate-version-file:
-	rm -f src/Version.as
-	touch src/Version.as
-	printf "package {public class Version{public static const COMMIT_HASH:String=\"">>src/Version.as
-	git log -1 --pretty=%H|tr -d '\n'>>src/Version.as
-	printf "\";public static const COMMIT_MSG:String=\"">>src/Version.as
-	git log -1 --pretty=%B|tr -d '\n'>>src/Version.as
-	printf "\";public static const GIT_DESCRIBE:String=\"">>src/Version.as
-	git describe --tags|tr -d '\n'>>src/Version.as
-	printf "\"}}">>src/Version.as
+	rm -f src/iMagineVersion.as
+	touch src/iMagineVersion.as
+	printf "package {public class iMagineVersion{public static const COMMIT_HASH:String=\"">>src/iMagineVersion.as
+	git log -1 --pretty=%H|tr -d '\n'>>src/iMagineVersion.as
+	printf "\";public static const COMMIT_MSG:String=\"">>src/iMagineVersion.as
+	git log -1 --pretty=%B|tr -d '\n'>>src/iMagineVersion.as
+	printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
+	git describe --tags|tr -d '\n'>>src/iMagineVersion.as
+	printf "\"}}">>src/iMagineVersion.as
