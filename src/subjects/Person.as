@@ -38,5 +38,24 @@ package subjects {
 			iMagine.api.defaultSubject=personName.toLowerCase();
 			return [Texts.NOW_SELECTED.replace("%1",personName)];
 		}
+		public function getenergy(args:Array):Array
+		{
+			if(args.length>0)
+			{
+				if(args[0]=="all")
+				{
+					var toReturn:Array=[];
+					for(var i:uint=0;i<Subjects.SUBJECT_OBJECTS.length;i++)
+					{
+						if(Subjects.SUBJECT_OBJECTS[i].type!="person")
+						{
+							continue;
+						}
+						toReturn.push(Subjects.SUBJECT_OBJECTS[i].personName+" has "+Subjects.SUBJECT_OBJECTS[i].energy+" energy!")
+					}
+				}
+			}
+			return [personName+" has "+energy+" energy!"];
+		}
 	}
 }
