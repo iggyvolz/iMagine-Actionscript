@@ -39,7 +39,10 @@ package {
 			inputText.y=380;
 			inputText.height=20;
 			outputText.height=380;
-			stage.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
+			if(stage)
+			{
+				stage.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
+			}
 		}
 
 		private function handleKeyDown(event : KeyboardEvent) : void {
