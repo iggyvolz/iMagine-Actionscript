@@ -6,7 +6,7 @@ open:
 	open bin/iMagine.swf
 debug:
 	fdb bin/iMagine.swf
-test:
+test: generate-version-file
 	mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
 	mkdir -p bin
 	mv src/Tests.swf ./bin
