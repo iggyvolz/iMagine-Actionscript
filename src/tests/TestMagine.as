@@ -18,5 +18,14 @@ package tests
         assertEquals(array1[i],array2[i]);
       }
     }
+    public function TestMagineAgain():void
+    {
+      var array1:Array=[Texts.ALREADY_IN_BATTLE.replace("%1","furok")];
+      var array2:Array=new InputParser("i.magine(furok)").returns;
+      for(var i:uint=0;i<array1.length||i<array2.length;i++)
+      {
+        assertEquals(array1[i],array2[i]);
+      }
+    }
   }
 }
