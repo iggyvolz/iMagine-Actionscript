@@ -50,12 +50,12 @@ package subjects {
 						{
 							continue;
 						}
-						toReturn.push(Texts.HAS_ENERGY.replace("%1",Subjects.SUBJECT_OBJECTS[i].personName).replace("%2",Subjects.SUBJECT_OBJECTS[i].energy));
+						toReturn.push(Texts.HAS_ENERGY.replace("%1",Subjects.SUBJECT_OBJECTS[i].personName.ucfirst()).replace("%2",Subjects.SUBJECT_OBJECTS[i].energy));
 					}
 					return toReturn;
 				}
 			}
-			return [personName+" has "+energy+" energy!"];
+			return [personName.ucfirst()+" has "+energy+" energy!"];
 		}
 		public function version(args:Array):Array
 		{
