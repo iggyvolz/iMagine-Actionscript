@@ -14,10 +14,10 @@ package subjects {
 			args; //ignore args
 			if(inDreamPlane)
 			{
-				return [Texts.ANIMITE_IN_DREAM_PLANE.replace("%1",creatureName)];
+				return [Texts.ANIMITE_IN_DREAM_PLANE.replace("%1",creatureName.ucfirst())];
 			}
 			inDreamPlane=true;
-			return [Texts.TO_THE_DREAM_PLANE.replace("%1",creatureName)];
+			return [Texts.TO_THE_DREAM_PLANE.replace("%1",creatureName.ucfirst())];
 		}
 		public function get energy():uint
 		{
