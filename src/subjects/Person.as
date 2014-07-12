@@ -21,7 +21,7 @@ package subjects {
 			}
 			if(!(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane)
 			{
-				return [Texts.ALREADY_IN_BATTLE.replace("%1",dreamCreature)];
+				return [Texts.ALREADY_IN_BATTLE.replace("%1",dreamCreature.ucfirst())];
 			}
 			(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane=false;
 			if(energy<100)
