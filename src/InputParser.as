@@ -7,10 +7,12 @@ package {
 		public var subject:String;
 		public var action:String;
 		public var args:Array;
+		public var _input:String;
 		public var _energyCache:Array;
 		private var _returns:Array=[];
 		public function InputParser(input:String):void
 		{
+			_input=(String)(input).clone();
 			_energyCache=energyCache;
 			input=input.toLowerCase();
 			if(input.indexOf(".")==-1)
@@ -48,14 +50,14 @@ package {
 			}
 			if(Subjects.SUBJECT_NAMES.indexOf(subject)==-1)
 			{
-				_returns = [Texts.SUBJECT_NOT_FOUND.replace("%1",subject)];return returns;
+				_returns = ['>'+_input,Texts.SUBJECT_NOT_FOUND.replace("%1",subject)];return returns;
 			}
 			var instance:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(subject)];
 			if(!(action in instance)||(typeof (instance[action])!="function"))
 			{
-				_returns = [Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;
+				_returns = ['>'+_input,Texts.ACTION_NOT_FOUND.replace("%1",subject).replace("%2",action)];return returns;
 			}
-			_returns=instance[action](args);
+			_returns=['>'+_input].concat(instance[action](args));
 			var finalEnergyCache:Array=energyCache;
 			for(var i:uint=0;i<finalEnergyCache.length;i++)
 			{

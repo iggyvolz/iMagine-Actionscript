@@ -4,6 +4,7 @@ package {
 	import flash.events.KeyboardEvent;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
+	import flash.utils.ByteArray;
 	import Subjects;
 
 	/**
@@ -11,6 +12,7 @@ package {
 	 */
 	public class iMagine extends Sprite {
 		String.prototype.ucfirst = function():String {return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();}
+		String.prototype.clone = function():String {var myBA:ByteArray = new ByteArray(); myBA.writeObject( this ); myBA.position = 0; return( myBA.readObject() ); }
 		public static var api:iMagine;
 		public static const DEFAULT_SUBJECT:String="tony";
 		public var defaultSubject:String=DEFAULT_SUBJECT;
