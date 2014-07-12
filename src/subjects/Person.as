@@ -35,7 +35,7 @@ package subjects {
 		{
 			args; // ignore args
 			iMagine.api.defaultSubject=personName.toLowerCase();
-			return [Texts.NOW_SELECTED.replace("%1",personName)];
+			return [Texts.NOW_SELECTED.replace("%1",personName.ucfirst())];
 		}
 		public function getenergy(args:Array):Array
 		{
