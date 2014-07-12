@@ -21,7 +21,7 @@ package subjects {
 			}
 			if(!(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane)
 			{
-				return [Texts.ALREADY_IN_BATTLE.replace("%1",dreamCreature.ucfirst())];
+				return [Texts.ALREADY_IN_BATTLE.replace("%1",(String)(dreamCreature).ucfirst())];
 			}
 			(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).inDreamPlane=false;
 			if(energy<100)
@@ -29,13 +29,13 @@ package subjects {
 				return [Texts.NOT_ENOUGH_ENERGY];
 			}
 			energy-=100;
-			return [Texts.I_MAGINE_SUCCESS.replace("%1",args[0]),(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).catchPhrase];
+			return [Texts.I_MAGINE_SUCCESS.replace("%1",(String)(args[0]).ucfirst()),(Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(dreamCreature)] as DreamCreature).catchPhrase];
 		}
 		public function changeto(args:Array):Array
 		{
 			args; // ignore args
 			iMagine.api.defaultSubject=personName.toLowerCase();
-			return [Texts.NOW_SELECTED.replace("%1",personName.ucfirst())];
+			return [Texts.NOW_SELECTED.replace("%1",(String)(personName).ucfirst())];
 		}
 		public function getenergy(args:Array):Array
 		{
@@ -50,12 +50,12 @@ package subjects {
 						{
 							continue;
 						}
-						toReturn.push(Texts.HAS_ENERGY.replace("%1",Subjects.SUBJECT_OBJECTS[i].personName.ucfirst()).replace("%2",Subjects.SUBJECT_OBJECTS[i].energy));
+						toReturn.push(Texts.HAS_ENERGY.replace("%1",(String)(Subjects.SUBJECT_OBJECTS[i].personName).ucfirst()).replace("%2",Subjects.SUBJECT_OBJECTS[i].energy));
 					}
 					return toReturn;
 				}
 			}
-			return [personName.ucfirst()+" has "+energy+" energy!"];
+			return [(String)(personName).ucfirst()+" has "+energy+" energy!"];
 		}
 		public function version(args:Array):Array
 		{
