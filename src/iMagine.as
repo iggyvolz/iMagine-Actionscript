@@ -53,6 +53,7 @@ package {
 				return;
 			}
 			outputText.appendText("\n"+(new InputParser(inputText.text)));
+			outputText.scrollV=outputText.maxScrollV;
 			inputText.text="";
 		}
 	}
