@@ -24,5 +24,6 @@ package {
 		public static const AHEAD_OF                    : String = "Ahead of %1 by %2 commits.";
 		public static const LAST_COMMIT                 : String = "Last commit: %1, message \"%2\""
 		public static const HAS_ENERGY                  : String = "%1 has %2 energy!"
+		public static const FUROK_COLOR_BLAST           : String = "Furok, Color Blast!";
 	}
 }
