@@ -48,7 +48,7 @@ package subjects {
 					shields[i]=0;
 				}
 			}
-			owner._damage(damage);
+			energy-=damage;
 		}
 	}
 }
