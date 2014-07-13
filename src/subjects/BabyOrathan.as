@@ -6,7 +6,7 @@ package subjects {
    */
   public class BabyOrathan extends DreamCreature {
     public function BabyOrathan() {
-      creatureName="BabyOrathan";
+      creatureName="Baby Orathan";
       inDreamPlane=true;
       catchPhrase=Texts.BABY_ORATHAN_CATCH_PHRASE;
       addEventListener(Event.ENTER_FRAME,setOwner);
