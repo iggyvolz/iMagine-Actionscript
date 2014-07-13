@@ -8,6 +8,7 @@ package subjects {
 		public var energy:uint=1000;
 		public var type:String="Person";
 		public var isMale:Boolean;
+		public var shields:Array=[];
 		public function magine(args:Array):Array
 		{
 			if(args.length==0)
@@ -66,6 +67,24 @@ package subjects {
 			var version:String=iMagineVersion.GIT_DESCRIBE.split("-")[0];
 			var plusminus:uint=iMagineVersion.GIT_DESCRIBE.split("-")[1];
 			return [Texts.AHEAD_OF.replace("%1",version).replace("%2",plusminus),Texts.LAST_COMMIT.replace("%1",iMagineVersion.COMMIT_HASH).replace("%2",iMagineVersion.COMMIT_MSG)];
+		}
+		public function _damage(damage:uint):void
+		{
+			for(var i:uint=0;i<shields.length;i++)
+			{
+				if(shields[i]>=damage)
+				{
+					shields[i]-=damage;
+					damage=0;
+					return;
+				}
+				else
+				{
+					damage-=shields[i];
+					shields[i]=0;
+				}
+			}
+			energy-=damage;
 		}
 	}
 }

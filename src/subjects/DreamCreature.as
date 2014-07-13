@@ -9,6 +9,7 @@ package subjects {
 		public var creatureName:String="";
 		public var catchPhrase:String="";
 		public var type:String="DreamCreature";
+		public var shields:Array=[];
 		public function tothedreamplane(args:Array):Array
 		{
 			args; //ignore args
@@ -30,6 +31,24 @@ package subjects {
 		public function version(args:Array):Array
 		{
 			return owner.version(args);
+		}
+		public function _damage(damage:uint):void
+		{
+			for(var i:uint=0;i<shields.length;i++)
+			{
+				if(shields[i]>=damage)
+				{
+					shields[i]-=damage;
+					damage=0;
+					return;
+				}
+				else
+				{
+					damage-=shields[i];
+					shields[i]=0;
+				}
+			}
+			owner._damage(damage);
 		}
 	}
 }
