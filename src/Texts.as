@@ -34,5 +34,6 @@ package {
 		public static const FUROK_WIND_STORM            : String = "Furok, Wind Storm!";
 		public static const FUROK_SHIELD_WINGS          : String = "Furok, Shield Wings!";
 		public static const FUROK_WIND_SHEAR            : String = "Furok, Wind Shear!";
+		public static const ALABAN_CATCH_PHRASE         : String = "Alaban, at your service!";
 	}
 }
