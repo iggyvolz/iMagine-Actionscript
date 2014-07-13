@@ -24,7 +24,7 @@ package subjects {
 			var toReturn:Array=[];
 			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
 			{
-				return [Texts.INVALID_TARGET.replace("%1",args[0])];
+				return [Texts.SUBJECT_NOT_FOUND.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
 			toReturn=toReturn.concat(targetObject._damage(100));
@@ -37,7 +37,7 @@ package subjects {
 			var targetName:String=args[0];
 			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
 			{
-				return [Texts.INVALID_TARGET.replace("%1",args[0])];
+				return [Texts.SUBJECT_NOT_FOUND.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
 			toReturn=toReturn.concat(targetObject._damage(100));
@@ -83,7 +83,7 @@ package subjects {
 			var toReturn:Array=[];
 			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
 			{
-				return [Texts.INVALID_TARGET.replace("%1",args[0])];
+				return [Texts.SUBJECT_NOT_FOUND.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
 			toReturn=toReturn.concat(targetObject._damage(100));

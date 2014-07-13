@@ -13,7 +13,6 @@ package {
 		public static const ANIMITE_IN_DREAM_PLANE      : String = "%1 is already in the dream plane!";
 		public static const TO_THE_DREAM_PLANE          : String = "%1, to the Dream Plane!";
 		public static const ALREADY_IN_BATTLE           : String = "%1 is already in battle!";
-		public static const INVALID_TARGET              : String = "%1 is an invalid target!";
 		public static const FUROK_ENERGY_BLAST          : String = "Furok, use Energy Blast!";
 		public static const FUROK_CATCH_PHRASE          : String = "Furok: Let the fur fly!";
 		public static const UGGER_ROOT_REACH            : String = "Ugger, use Root Reach!";

@@ -22,7 +22,7 @@ package subjects {
 			var targetName:String=args[0];
 			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
 			{
-				return [Texts.INVALID_TARGET.replace("%1",args[0])];
+				return [Texts.SUBJECT_NOT_FOUND.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
 			if(targetObject.energy>100)
