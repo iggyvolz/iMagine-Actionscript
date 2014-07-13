@@ -62,5 +62,20 @@ package subjects {
 			toReturn.push(Texts.FUROK_ENERGY_SHIELD);
 			return toReturn;
 		}
+		public function energytrail(args:Array):Array
+		{
+			var toReturn:Array=[];
+			var targetName:String=args[0];
+			//if(!isrelicactive(silver_wing)) Use something similar to this when we do relics
+			if(true)
+			{
+				toReturn.push(Texts.RELIC_NOT_ACTIVE.replace("%1","Silver Wing"));
+				return toReturn;
+			}
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_ENERGY_TRAIL);
+			return toReturn;
+		}
 	}
 }
