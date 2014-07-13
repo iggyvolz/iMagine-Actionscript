@@ -39,5 +39,10 @@ package subjects {
 			targetObject._damage(100);
 			return [Texts.FUROK_COLOR_BLAST];
 		}
+		public function energyshield(args:Array):Array
+		{
+			shields.push(100);
+			return [Texts.FUROK_ENERGY_SHIELD];
+		}
 	}
 }

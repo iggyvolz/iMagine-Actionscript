@@ -25,5 +25,6 @@ package {
 		public static const LAST_COMMIT                 : String = "Last commit: %1, message \"%2\""
 		public static const HAS_ENERGY                  : String = "%1 has %2 energy!"
 		public static const FUROK_COLOR_BLAST           : String = "Furok, Color Blast!";
+		public static const FUROK_ENERGY_SHIELD         : String = "Furok, Energy Shield!";
 	}
 }
