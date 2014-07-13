@@ -29,7 +29,10 @@ package {
 		public static const SHIELD_DESTROY              : String = "%1's %2 was destroyed!";
 		public static const RELIC_NOT_ACTIVE            : String = "You need to activate the %1 relic before you do that!";
 		public static const FUROK_ENERGY_TRAIL          : String = "Furok, Energy Trail!";
-		public static const FUROK_PAW_SLAM              : String = "Furok, Paw Slam!"
-		public static const FUROK_THUNDER_CHARGE        : String = "Furok, Thunder Charge!"
+		public static const FUROK_PAW_SLAM              : String = "Furok, Paw Slam!";
+		public static const FUROK_THUNDER_CHARGE        : String = "Furok, Thunder Charge!";
+		public static const FUROK_WIND_STORM            : String = "Furok, Wind Storm!";
+		public static const FUROK_SHIELD_WINGS          : String = "Furok, Shield Wings!";
+		public static const FUROK_WIND_SHEAR            : String = "Furok, Wind Shear!";
 	}
 }

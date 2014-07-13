@@ -104,5 +104,50 @@ package subjects {
 			toReturn.push(Texts.FUROK_THUNDER_CHARGE);
 			return toReturn;
 		}
+		public function windstorm(args:Array):Array
+		{
+			var toReturn:Array=[];
+			var targetName:String=args[0];
+			//if(!isrelicactive(silver_wing)) Use something similar to this when we do relics
+			if(true)
+			{
+				toReturn.push(Texts.RELIC_NOT_ACTIVE.replace("%1","Silver Wing"));
+				return toReturn;
+			}
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_WIND_STORM);
+			return toReturn;
+		}
+		public function shieldwings(args:Array):Array
+		{
+			var toReturn:Array=[];
+			var targetName:String=args[0];
+			//if(!isrelicactive(silver_wing)) Use something similar to this when we do relics
+			if(true)
+			{
+				toReturn.push(Texts.RELIC_NOT_ACTIVE.replace("%1","Silver Wing"));
+				return toReturn;
+			}
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_SHIELD_WINGS);
+			return toReturn;
+		}
+		public function windshear(args:Array):Array
+		{
+			var toReturn:Array=[];
+			var targetName:String=args[0];
+			//if(!isrelicactive(silver_wing)) Use something similar to this when we do relics
+			if(true)
+			{
+				toReturn.push(Texts.RELIC_NOT_ACTIVE.replace("%1","Silver Wing"));
+				return toReturn;
+			}
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_WIND_SHEAR);
+			return toReturn;
+		}
 	}
 }
