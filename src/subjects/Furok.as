@@ -25,14 +25,7 @@ package subjects {
 				return [Texts.INVALID_TARGET.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
-			if(targetObject.energy>100)
-			{
-				targetObject.energy-=100;
-			}
-			else
-			{
-				targetObject.energy=0;
-			}
+			targetObject._damage(100);
 			return [Texts.FUROK_ENERGY_BLAST];
 		}
 		public function colorblast(args:Array):Array
@@ -43,14 +36,7 @@ package subjects {
 				return [Texts.INVALID_TARGET.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
-			if(targetObject.energy>100)
-			{
-				targetObject.energy-=100;
-			}
-			else
-			{
-				targetObject.energy=0;
-			}
+			targetObject._damage(100);
 			return [Texts.FUROK_COLOR_BLAST];
 		}
 	}
