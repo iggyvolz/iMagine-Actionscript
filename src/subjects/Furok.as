@@ -90,5 +90,19 @@ package subjects {
 			toReturn.push(Texts.FUROK_PAW_SLAM);
 			return toReturn;
 		}
+		public function thundercharge(args:Array):Array
+		{
+			var targetName:String=args[0];
+			var toReturn:Array=[];
+			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
+			{
+				return [Texts.SUBJECT_NOT_FOUND.replace("%1",args[0])];
+			}
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			toReturn=toReturn.concat(targetObject._damage(150));
+			toReturn=toReturn.concat(this._damage(25));
+			toReturn.push(Texts.FUROK_THUNDER_CHARGE);
+			return toReturn;
+		}
 	}
 }
