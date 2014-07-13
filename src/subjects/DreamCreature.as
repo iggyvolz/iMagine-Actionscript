@@ -32,23 +32,25 @@ package subjects {
 		{
 			return owner.version(args);
 		}
-		public function _damage(damage:uint):void
+		public function _damage(damage:uint):Array
 		{
+			var toReturn:Array=[];
 			for(var i:uint=0;i<shields.length;i++)
 			{
-				if(shields[i]>=damage)
+				if(shields[i].strength>=damage)
 				{
-					shields[i]-=damage;
+					toReturn=toReturn.concat(shields[i].damage(damage));
 					damage=0;
-					return;
+					return toReturn;
 				}
 				else
 				{
-					damage-=shields[i];
-					shields[i]=0;
+					damage-=shields[i].strength;
+					toReturn=toReturn.concat(shields[i].destroy());
 				}
 			}
 			energy-=damage;
+			return toReturn;
 		}
 	}
 }

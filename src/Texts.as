@@ -26,5 +26,7 @@ package {
 		public static const HAS_ENERGY                  : String = "%1 has %2 energy!"
 		public static const FUROK_COLOR_BLAST           : String = "Furok, Color Blast!";
 		public static const FUROK_ENERGY_SHIELD         : String = "Furok, Energy Shield!";
+		public static const SHEILD_DAMAGE               : String = "%1's %2 was damaged by %3 energy!  It only has %4 energy left!";
+		public static const SHIELD_DESTROY              : String = "%1's %2 was destroyed!";
 	}
 }

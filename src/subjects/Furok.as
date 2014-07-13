@@ -1,6 +1,7 @@
 package subjects {
 	import Subjects;
 	import flash.events.*;
+	import Shield;
 	/**
 	 * @author iggyvolz
 	 */
@@ -20,29 +21,46 @@ package subjects {
 		public function energyblast(args:Array):Array
 		{
 			var targetName:String=args[0];
+			var toReturn:Array=[];
 			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
 			{
 				return [Texts.INVALID_TARGET.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
-			targetObject._damage(100);
-			return [Texts.FUROK_ENERGY_BLAST];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_ENERGY_BLAST);
+			return toReturn;
 		}
 		public function colorblast(args:Array):Array
 		{
+			var toReturn:Array=[];
 			var targetName:String=args[0];
 			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
 			{
 				return [Texts.INVALID_TARGET.replace("%1",args[0])];
 			}
 			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
-			targetObject._damage(100);
-			return [Texts.FUROK_COLOR_BLAST];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_COLOR_BLAST);
+			return toReturn;
 		}
 		public function energyshield(args:Array):Array
 		{
-			shields.push(100);
-			return [Texts.FUROK_ENERGY_SHIELD];
+			var shield:Shield=new Shield(100,"Furok","Energy Shield");
+			var toReturn:Array=[];
+			for(var i:uint=0;i<args.length;i++)
+			{
+				if(Subjects.SUBJECT_NAMES.indexOf(args[i])==-1)
+				{
+					toReturn.push(Texts.SUBJECT_NOT_FOUND.replace("%1",args[i]));
+				}
+				else
+				{
+					Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(args[i])].shields.push(shield);
+				}
+			}
+			toReturn.push(Texts.FUROK_ENERGY_SHIELD);
+			return toReturn;
 		}
 	}
 }

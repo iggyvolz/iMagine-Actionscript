@@ -68,23 +68,34 @@ package subjects {
 			var plusminus:uint=iMagineVersion.GIT_DESCRIBE.split("-")[1];
 			return [Texts.AHEAD_OF.replace("%1",version).replace("%2",plusminus),Texts.LAST_COMMIT.replace("%1",iMagineVersion.COMMIT_HASH).replace("%2",iMagineVersion.COMMIT_MSG)];
 		}
-		public function _damage(damage:uint):void
+		public function _damage(damage:uint):Array
 		{
+			var toReturn:Array=[];
 			for(var i:uint=0;i<shields.length;i++)
 			{
-				if(shields[i]>=damage)
+				if(shields[i].strength>0)
 				{
-					shields[i]-=damage;
-					damage=0;
-					return;
-				}
-				else
-				{
-					damage-=shields[i];
-					shields[i]=0;
+					if(shields[i].strength>damage)
+					{
+						toReturn=toReturn.concat(shields[i].damage(damage));
+						damage=0;
+						return toReturn;
+					}
+					else if(shields[i].strength==damage)
+					{
+						damage-=shields[i].strength;
+						toReturn=toReturn.concat(shields[i].destroy());
+						return toReturn;
+					}
+					else
+					{
+						damage-=shields[i].strength;
+						toReturn=toReturn.concat(shields[i].destroy());
+					}
 				}
 			}
 			energy-=damage;
+			return toReturn;
 		}
 	}
 }
