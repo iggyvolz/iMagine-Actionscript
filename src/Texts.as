@@ -30,5 +30,6 @@ package {
 		public static const SHIELD_DESTROY              : String = "%1's %2 was destroyed!";
 		public static const RELIC_NOT_ACTIVE            : String = "You need to activate the %1 relic before you do that!";
 		public static const FUROK_ENERGY_TRAIL          : String = "Furok, Energy Trail!";
+		public static const FUROK_PAW_SLAM              : String = "Furok, Paw Slam!"
 	}
 }

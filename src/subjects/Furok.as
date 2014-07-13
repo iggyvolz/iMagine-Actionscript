@@ -77,5 +77,18 @@ package subjects {
 			toReturn.push(Texts.FUROK_ENERGY_TRAIL);
 			return toReturn;
 		}
+		public function pawslam(args:Array):Array
+		{
+			var targetName:String=args[0];
+			var toReturn:Array=[];
+			if(Subjects.SUBJECT_NAMES.indexOf(targetName)==-1)
+			{
+				return [Texts.INVALID_TARGET.replace("%1",args[0])];
+			}
+			var targetObject:*=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(targetName)];
+			toReturn=toReturn.concat(targetObject._damage(100));
+			toReturn.push(Texts.FUROK_PAW_SLAM);
+			return toReturn;
+		}
 	}
 }
