@@ -37,5 +37,6 @@ package {
 		public static const ALABAN_CATCH_PHRASE         : String = "Alaban, at your service!";
 		public static const BABY_ORATHAN_CATCH_PHRASE   : String = "Baby Orathan, reporting for duty!";
 		public static const BALDAR_CATCH_PHRASE         : String = "Baldar, ready to fight!";
+		public static const CAVE_RUDWOTT_CATCH_PHRASE   : String = "Cave Rudwott, present!";
 	}
 }

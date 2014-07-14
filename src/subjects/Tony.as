@@ -4,7 +4,7 @@ package subjects {
 	 */
 	public class Tony extends Person {
 		public function Tony() {
-			animite=["furok","alaban","babyorathan","baldar"];
+			animite=["furok","alaban","babyorathan","baldar","caverudwott"];
 			personName="Tony";
 			isMale=true;
 		}
