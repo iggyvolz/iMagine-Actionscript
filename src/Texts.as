@@ -38,5 +38,9 @@ package {
 		public static const BABY_ORATHAN_CATCH_PHRASE   : String = "Baby Orathan, reporting for duty!";
 		public static const BALDAR_CATCH_PHRASE         : String = "Baldar, ready to fight!";
 		public static const CAVE_RUDWOTT_CATCH_PHRASE   : String = "Cave Rudwott, present!";
+		public static const DJARMANDER_CATCH_PHRASE     : String = "Is it cold in here or is it just me?";
+		public static const DJARMANDER_ICE_BOLT         : String = "Djarmander, Ice Bolt!";
+		public static const DJARMANDER_FREEZE_CLAWS     : String = "Djarmander, Freeze Claws!";
+		public static const DJARMANDER_BLIZZARD_BLAST   : String = "Djarmander, Blizzard Blast!";
 	}
 }
