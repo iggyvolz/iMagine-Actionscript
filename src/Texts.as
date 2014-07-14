@@ -43,5 +43,6 @@ package {
 		public static const DJARMANDER_FREEZE_CLAWS     : String = "Djarmander, Freeze Claws!";
 		public static const DJARMANDER_BLIZZARD_BLAST   : String = "Djarmander, Blizzard Blast!";
 		public static const FOREST_PLITH_CATCH_PHRASE   : String = "Forest Plith is ready!";
+		public static const GOOGATHAN_CATCH_PHRASE      : String = "Hope I can stick around!";
 	}
 }
