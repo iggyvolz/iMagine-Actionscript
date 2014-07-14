@@ -48,5 +48,6 @@ package {
 		public static const HUBRAM_CATCH_PHRASE         : String = "Hubram is here!";
 		public static const OBSIS_CATCH_PHRASE          : String = "Umm... I'm here!";
 		public static const PARATHIN_CATCH_PHRASE       : String = "Parathin in the house!!!";
+		public static const RIVER_ABAQUIST_CATCH_PHRASE : String = "I'm River Abaquist, what's your name?"
 	}
 }
