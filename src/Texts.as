@@ -46,5 +46,6 @@ package {
 		public static const GOOGATHAN_CATCH_PHRASE      : String = "Hope I can stick around!";
 		public static const HEPPESWIP_CATCH_PHRASE      : String = "Is Furok around?";
 		public static const HUBRAM_CATCH_PHRASE         : String = "Hubram is here!";
+		public static const OBSIS_CATCH_PHRASE          : String = "Umm... I'm here!";
 	}
 }
