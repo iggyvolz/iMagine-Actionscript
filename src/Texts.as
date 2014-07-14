@@ -44,6 +44,6 @@ package {
 		public static const DJARMANDER_BLIZZARD_BLAST   : String = "Djarmander, Blizzard Blast!";
 		public static const FOREST_PLITH_CATCH_PHRASE   : String = "Forest Plith is ready!";
 		public static const GOOGATHAN_CATCH_PHRASE      : String = "Hope I can stick around!";
-		public static const HEEPESWIP_CATCH_PHRASE      : String = "Is Furok around?";
+		public static const HEPPESWIP_CATCH_PHRASE      : String = "Is Furok around?";
 	}
 }
