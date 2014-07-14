@@ -18,7 +18,7 @@ package subjects {
 				return [Texts.ANIMITE_IN_DREAM_PLANE.replace("%1",creatureName)];
 			}
 			inDreamPlane=true;
-			return [Texts.TO_THE_DREAM_PLANE.replace("%1",creatureName];
+			return [Texts.TO_THE_DREAM_PLANE.replace("%1",creatureName)];
 		}
 		public function get energy():uint
 		{
