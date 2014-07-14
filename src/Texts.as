@@ -47,5 +47,6 @@ package {
 		public static const HEPPESWIP_CATCH_PHRASE      : String = "Is Furok around?";
 		public static const HUBRAM_CATCH_PHRASE         : String = "Hubram is here!";
 		public static const OBSIS_CATCH_PHRASE          : String = "Umm... I'm here!";
+		public static const PARATHIN_CATCH_PHRASE       : String = "Parathin in the house!!!";
 	}
 }
