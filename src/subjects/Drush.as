@@ -5,7 +5,7 @@ package subjects {
    * @author iggyvolz
    */
   public class Drush extends DreamCreature {
-    public function Stagadan() {
+    public function Drush() {
       creatureName="Drush";
       inDreamPlane=true;
       catchPhrase=Texts.DRUSH_CATCH_PHRASE;
