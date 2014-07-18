@@ -6,7 +6,7 @@ package subjects {
    */
   public class GrassEtiki extends DreamCreature {
     public function GrassEtiki() {
-      creatureName="GrassEtiki";
+      creatureName="Grass Etiki";
       inDreamPlane=true;
       catchPhrase=Texts.GRASS_ETIKI_CATCH_PHRASE;
       addEventListener(Event.ENTER_FRAME,setOwner);
