@@ -4,7 +4,7 @@ package subjects {
 	 */
 	public class Edyn extends Person {
 		public function Edyn() {
-			animite=["ugger"];
+			animite=["ugger","balamant","bisiwog","brub","drowl","leafchogo","stagadan","forestplith","drush","grassetiki","slithgiant","rudwot","szhar","carillion"];
 			personName="Edyn";
 			isMale=false;
 		}
