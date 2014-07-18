@@ -55,5 +55,9 @@ package {
 		public static const BRUB_CATCH_PHRASE           : String = "Brub, ready to battle!";
 		public static const DROWL_CATCH_PHRASE          : String = "Drowl is in the house!";
 		public static const LEAF_CHOGO_CATCH_PHRASE     : String = "Leaf Chogo, at your service!";
+		public static const STAGADAN_CATCH_PHRASE       : String = "Stagadan is ready!!!";
+		public static const STAGADAN_HORN_BLAST         : String = "Stagadan, Horn Blast!";
+		public static const STAGADAN_LEAF_LASH          : String = "Stagadan, Leaf Lash!";
+		public static const STAGADAN_LEAF_SWIRL         : String = "Stagadan, Leaf Swirl!";
 	}
 }
