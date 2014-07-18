@@ -61,5 +61,8 @@ package {
 		public static const STAGADAN_LEAF_SWIRL         : String = "Stagadan, Leaf Swirl!";
 		public static const DRUSH_CATCH_PHRASE          : String = "Drush, ready for battle!";
 		public static const DRUSH_SKELETON_SQUEEZE      : String = "Drush, Skeleton Squeeze!";
+		public static const GRASS_ETIKI_CATCH_PHRASE    : String = "Grass Etiki to the rescue!";
+		public static const GRASS_ETIKI_ROOT_REACH      : String = "Grass Etiki, Root Reach!";
+		public static const GRASS_ETIKI_POLLEN_STORM    : String = "Grass Etiki, Pollen Storm!";
 	}
 }
