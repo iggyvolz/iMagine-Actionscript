@@ -64,5 +64,6 @@ package {
 		public static const GRASS_ETIKI_CATCH_PHRASE    : String = "Grass Etiki to the rescue!";
 		public static const GRASS_ETIKI_ROOT_REACH      : String = "Grass Etiki, Root Reach!";
 		public static const GRASS_ETIKI_POLLEN_STORM    : String = "Grass Etiki, Pollen Storm!";
+		public static const SILTH_GIANT_CATCH_PHRASE    : String = "Silth Giant is here!";
 	}
 }
