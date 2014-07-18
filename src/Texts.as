@@ -59,5 +59,7 @@ package {
 		public static const STAGADAN_HORN_BLAST         : String = "Stagadan, Horn Blast!";
 		public static const STAGADAN_LEAF_LASH          : String = "Stagadan, Leaf Lash!";
 		public static const STAGADAN_LEAF_SWIRL         : String = "Stagadan, Leaf Swirl!";
+		public static const DRUSH_CATCH_PHRASE          : String = "Drush, ready for battle!";
+		public static const DRUSH_SKELETON_SQUEEZE      : String = "Drush, Skeleton Squeeze!";
 	}
 }
