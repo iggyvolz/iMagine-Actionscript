@@ -50,5 +50,6 @@ package {
 		public static const PARATHIN_CATCH_PHRASE       : String = "Parathin in the house!!!";
 		public static const RIVER_ABAQUIST_CATCH_PHRASE : String = "I'm River Abaquist, what's your name?";
 		public static const SEVEROS_CATCH_PHRASE        : String = "Please welcome... Severos!";
+		public static const BALAMANT_CATCH_PHRASE       : String = "Balamant, reporting for duty!";
 	}
 }
