@@ -79,5 +79,13 @@ package {
 		public static const SARANTHER_CATCH_PHRASE      : String = "Saranther, ready to charge!";
 		public static const TOAD_DOG_CATCH_PHRASE       : String = "Woof!";
 		public static const VULBOR_CATCH_PHRASE         : String = "Vulbor, lighting the way!";
+		public static const FREEP_REBOUND_VORTEX        : String = "Freep, Rebound Vortex!";
+		public static const FREEP_SHIELD_GONG           : String = "Freep, Shield Gong!";
+		public static const FREEP_SHELL_GUARD           : String = "Freep, Shell Guard!";
+		public static const FREEP_SHELL_SAW             : String = "Freep, Shell Saw!";
+		public static const FREEP_SHELL_SCATTER         : String = "Freep, Shell Scatter!";
+		public static const FREEP_SHELL_SHOCK           : String = "Freep, Shell Shock!";
+		public static const FREEP_SHELL_SIEGE           : String = "Freep, Shell Siege!";
+		public static const FREEP_SLAMURSAULT           : String = "Freep, Slamursault!";
 	}
 }
