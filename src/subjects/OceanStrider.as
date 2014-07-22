@@ -4,11 +4,11 @@ package subjects {
   /**
    * @author iggyvolz
    */
-  public class Szhar extends DreamCreature {
-    public function Szhar() {
-      creatureName="Szhar";
+  public class OceanStrider extends DreamCreature {
+    public function OceanStrider() {
+      creatureName="Ocean Strider";
       inDreamPlane=true;
-      catchPhrase=Texts.SZHAR_CATCH_PHRASE;
+      catchPhrase=Texts.OCEAN_STRIDER_CATCH_PHRASE;
       addEventListener(Event.ENTER_FRAME,setOwner);
     }
     public function setOwner(e:*):void

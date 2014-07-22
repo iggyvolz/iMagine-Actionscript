@@ -4,11 +4,11 @@ package subjects {
   /**
    * @author iggyvolz
    */
-  public class Szhar extends DreamCreature {
-    public function Szhar() {
-      creatureName="Szhar";
+  public class IceArboll extends DreamCreature {
+    public function IceArboll() {
+      creatureName="Ice Arboll";
       inDreamPlane=true;
-      catchPhrase=Texts.SZHAR_CATCH_PHRASE;
+      catchPhrase=Texts.ICE_ARBOLL_CATCH_PHRASE;
       addEventListener(Event.ENTER_FRAME,setOwner);
     }
     public function setOwner(e:*):void

@@ -67,6 +67,17 @@ package {
 		public static const SILTH_GIANT_CATCH_PHRASE    : String = "Silth Giant is here!";
 		public static const RUDWOT_CATCH_PHRASE         : String = "Rudwot, present!";
 		public static const SZHAR_CATCH_PHRASE          : String = "Szhar, reporting for duty!";
-		public static const CARILLION_CATCH_PHRASE      : String = "What needs to be destroyed?";
+		public static const CARILLION_CATCH_PHRASE      : String = "What needs to be destroyed?"
+		public static const FOAMOTOS_CATCH_PHRASE       : String = "Foamotos, in the house!";
+		public static const FOREST_PLYTH_CATCH_PHRASE   : String = "Forest Plyth, at your service!";
+		public static const GARGANOR_CATCH_PHRASE       : String = "Garganor, ready to battle!";
+		public static const HUBRUM_CATCH_PHRASE         : String = "Hubrum, preparing to fight!";
+		public static const ICE_ARBOLL_CATCH_PHRASE     : String = "Is it cold in here or is it just me?";
+		public static const MOSSOWING_CATCH_PHRASE      : String = "Mossowing to the rescue!";
+		public static const OCEAN_STRIDER_CATCH_PHRASE  : String = "Ocean Strider is here!";
+		public static const PRIMROOT_CATCH_PHRASE       : String = "Is it hot in here or is it just me?";
+		public static const SARANTHER_CATCH_PHRASE      : String = "Saranther, ready to charge!";
+		public static const TOAD_DOG_CATCH_PHRASE       : String = "Woof!";
+		public static const VULBOR_CATCH_PHRASE         : String = "Vulbor, lighting the way!";
 	}
 }
