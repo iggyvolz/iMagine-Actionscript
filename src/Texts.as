@@ -84,8 +84,13 @@ package {
 		public static const FREEP_SHELL_GUARD           : String = "Freep, Shell Guard!";
 		public static const FREEP_SHELL_SAW             : String = "Freep, Shell Saw!";
 		public static const FREEP_SHELL_SCATTER         : String = "Freep, Shell Scatter!";
-		public static const FREEP_SHELL_SHOCK           : String = "Freep, Shell Shock!";
 		public static const FREEP_SHELL_SIEGE           : String = "Freep, Shell Siege!";
 		public static const FREEP_SLAMURSAULT           : String = "Freep, Slamursault!";
+		public static const UGGER_TREE_MERGE            : String = "Ugger, Tree Merge!";
+		public static const UGGER_WOOD_WHIP             : String = "Ugger, Wood Whip!";
+		public static const UGGER_ROOT_SLICE            : String = "Ugger, Root Slice!";
+		public static const UGGER_HORN_BLAST            : String = "Ugger, Horn Blast!";
+		public static const UGGER_DRILL_ROOT            : String = "Ugger, Drill Root!";
+		public static const UGGER_ROOT_LASH             : String = "Ugger, Root Lash!";
 	}
 }
