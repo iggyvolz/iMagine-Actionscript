@@ -9,7 +9,7 @@ debug:
 test: build-test
 	fdb bin/Tests.swf
 build-test: generate-version-file
-	mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
+	mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/Tests.swf ./bin
 generate-version-file:
@@ -23,7 +23,6 @@ generate-version-file:
 	git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	printf "\"}}">>src/iMagineVersion.as
 drone-io: generate-version-file
-	git submodule update --init --recursive
 	mkdir flex_sdk
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip flex_sdk_4.6.zip -d flex_sdk
