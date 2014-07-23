@@ -29,6 +29,7 @@ drone-io-download-flex-sdk:
 	cd ..
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip flex_sdk_4.6.zip
+	ls
 	cd flex_sdk_4.6
 	cd bin
 	export PATH=$PATH:`pwd`
