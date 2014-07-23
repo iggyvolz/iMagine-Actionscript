@@ -22,15 +22,16 @@ generate-version-file:
 	printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
 	git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	printf "\"}}">>src/iMagineVersion.as
-drone-io: drone-io-submodule-update generate-version-file drone-io-download-flex-sdk build build-test
-drone-io-submodule-update:
+drone-io: generate-version-file
 	git submodule update --init --recursive
-drone-io-download-flex-sdk:
 	mkdir flex_sdk
 	cd flex_sdk
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip flex_sdk_4.6.zip
-	cd bin
-	export PATH=`pwd`
 	cd ..
-	cd ..
+	flex_sdk/mxmlc src/iMagine.as -debug=true -default-size=550,400
+	mkdir -p bin
+	mv src/iMagine.swf ./bin
+	mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
+	mkdir -p bin
+	mv src/Tests.swf ./bin
