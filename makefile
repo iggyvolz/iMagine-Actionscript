@@ -26,15 +26,11 @@ drone-io: drone-io-submodule-update generate-version-file drone-io-download-flex
 drone-io-submodule-update:
 	git submodule update --init --recursive
 drone-io-download-flex-sdk:
-	pwd
-	cd ..
-	pwd
+	mkdir flex_sdk
+	cd flex_sdk_4.6
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip flex_sdk_4.6.zip
-	ls
-	cd flex_sdk_4.6
 	cd bin
 	export PATH=$PATH:`pwd`
 	cd ..
 	cd ..
-	cd iMagine
