@@ -5,6 +5,7 @@ package {
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.utils.ByteArray;
+	import flash.events.Event;
 	import Subjects;
 
 	/**
@@ -14,12 +15,14 @@ package {
 		String.prototype.ucfirst = function():String {return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();}
 		String.prototype.clone = function():String {var myBA:ByteArray = new ByteArray(); myBA.writeObject( this ); myBA.position = 0; return( myBA.readObject() ); }
 		public static var api:iMagine;
+		public static var f:uint;
 		public static const DEFAULT_SUBJECT:String="tony";
 		public var defaultSubject:String=DEFAULT_SUBJECT;
 		public var outputText:TextField=new TextField;
 		public var outputTextFormat:TextFormat=new TextFormat;
 		public var inputText:TextField=new TextField;
 		public var inputTextFormat:TextFormat=new TextFormat;
+		public var first:Boolean=true;
 		public function iMagine() {
 			Subjects.SUBJECT_OBJECTS;
 			Subjects.SUBJECT_NAMES;
@@ -44,6 +47,15 @@ package {
 			if(stage)
 			{
 				stage.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
+				stage.addEventListener(Event.ENTER_FRAME,handleEnterFrame);
+			}
+		}
+
+		private function handleEnterFrame(event:Event):void{
+			f++;
+			if(f==1)
+			{
+				outputText.appendText(Texts.INTRO_TEXT+new InputParser("version").returns[1]);
 			}
 		}
 
@@ -52,7 +64,15 @@ package {
 			{
 				return;
 			}
-			outputText.appendText("\n"+(new InputParser(inputText.text)));
+			if(first)
+			{
+				outputText.appendText(""+(new InputParser(inputText.text)));
+				first=false;
+			}
+			else
+			{
+				outputText.appendText("\n"+(new InputParser(inputText.text)));
+			}
 			outputText.scrollV=outputText.maxScrollV;
 			inputText.text="";
 		}

@@ -92,5 +92,6 @@ package {
 		public static const UGGER_HORN_BLAST            : String = "Ugger, Horn Blast!";
 		public static const UGGER_DRILL_ROOT            : String = "Ugger, Drill Root!";
 		public static const UGGER_ROOT_LASH             : String = "Ugger, Root Lash!";
+		public static const INTRO_TEXT                  : String = "Welcome to iMagine!  Current version: ";
 	}
 }
