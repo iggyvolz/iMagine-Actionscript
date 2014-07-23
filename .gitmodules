@@ -1,9 +1,0 @@
-[submodule "asunit"]
-	path = asunit
-	url = https://github.com/iggyvolz/asunit.git
-	## If you cloned on or before 7/23/2014, you must update your submodules using the following instructions:
-	## 1. cd to the base path of iMagine
-	## 2. git fetch && git pull
-	## 3. Remove [submodule "asunit"] and the line below from .git/config
-	## 4. Run rm -R .git/modules/asunit (or rm -R .git/modules/external/asunit for git 1.x)
-	## 5. Run git submodule init && git submodule update
