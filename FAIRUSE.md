@@ -1,3 +1,6 @@
+Rationalization for fair use
+============================
+
 Magi-Nation and its respective characters, names, spells, etc. are copyrighted by Interactive Imagination Corporation, 2i, and Cookie Jar Entertainment. This game was created in the fan base and claims no affiliation with the copyright holders.
 While the material falls under copyright, we believe that the iMagine project qualifies as "fair use" under United States copyright law.  As per the US code on fair use ([1][17 U.S.C. § 107.]), the criteria for fair use are:
 > Notwithstanding the provisions of sections 106 and 106A, the fair use of a copyrighted work, including such use by reproduction in copies or phonorecords or by any other means specified by that section, for purposes such as criticism, comment, news reporting, teaching (including multiple copies for classroom use), scholarship, or research, is not an infringement of copyright. In determining whether the use made of a work in any particular case is a fair use the factors to be considered shall include—
