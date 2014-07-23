@@ -29,6 +29,6 @@ drone-io: generate-version-file
 	./flex_sdk/bin/mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/iMagine.swf ./bin
-	./flex_sdk/bin/mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
+	./flex_sdk/bin/mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/Tests.swf ./bin
