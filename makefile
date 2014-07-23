@@ -29,9 +29,9 @@ drone-io: generate-version-file
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip flex_sdk_4.6.zip
 	cd ..
-	./flex_sdk/mxmlc src/iMagine.as -debug=true -default-size=550,400
+	flex_sdk/bin/mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/iMagine.swf ./bin
-	./flex_sdk/mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
+	flex_sdk/bin/mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
 	mkdir -p bin
 	mv src/Tests.swf ./bin
