@@ -7,10 +7,10 @@ package tests
     public function AllTests()
     {
       super();
-      addTest(new TestMagine("BasicTestMagine"));
-      addTest(new TestMagine("TestMagineAgain"));
-      addTest(new TestToTheDreamPlane("BasicTestToTheDreamPlane"));
-      addTest(new TestToTheDreamPlane("TestToTheDreamPlaneAgain"));
+      addTest(new TestMagine());
+      addTest(new TestMagineAgain());
+      addTest(new TestToTheDreamPlane());
+      addTest(new TestToTheDreamPlaneAgain());
     }
   }
 }
