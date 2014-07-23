@@ -26,7 +26,9 @@ drone-io: drone-io-submodule-update generate-version-file drone-io-download-flex
 drone-io-submodule-update:
 	git submodule update --init --recursive
 drone-io-download-flex-sdk:
+	pwd
 	cd ..
+	pwd
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip flex_sdk_4.6.zip
 	ls
