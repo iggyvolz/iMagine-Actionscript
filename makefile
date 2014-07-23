@@ -24,16 +24,9 @@ generate-version-file:
 	printf "\"}}">>src/iMagineVersion.as
 drone-io: generate-version-file
 	git submodule update --init --recursive
-	mkdir flex_sdk
-	pwd
 	cd flex_sdk
-	pwd
 	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
-	unzip flex_sdk_4.6.zip
-	pwd
-	cd
-	pwd
-	find .|grep mxmlc
+	unzip flex_sdk_4.6.zip -d flex_sdk
 	./flex_sdk/bin/mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/iMagine.swf ./bin
