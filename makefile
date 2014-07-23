@@ -6,11 +6,12 @@ open:
 	open bin/iMagine.swf
 debug:
 	fdb bin/iMagine.swf
-test: generate-version-file
+test: build-test
+	fdb bin/Tests.swf
+build-test: generate-version-file
 	mxmlc src/Tests.as -debug=true -default-size=550,400 -sp=./asunit/asunit-3.0/src
 	mkdir -p bin
 	mv src/Tests.swf ./bin
-	fdb bin/Tests.swf
 generate-version-file:
 	rm -f src/iMagineVersion.as
 	touch src/iMagineVersion.as
@@ -21,3 +22,16 @@ generate-version-file:
 	printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
 	git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	printf "\"}}">>src/iMagineVersion.as
+drone-io: drone-io-submodule-update generate-version-file drone-io-download-flex-sdk build build-test
+drone-io-submodule-update:
+	git submodule update --init --recursive
+drone-io-download-flex-sdk:
+	cd ..
+	wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
+	unzip flex_sdk_4.6.zip
+	cd flex_sdk_4.6
+	cd bin
+	export PATH=$PATH:`pwd`
+	cd ..
+	cd ..
+	cd iMagine
