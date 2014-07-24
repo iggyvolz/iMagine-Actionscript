@@ -55,7 +55,7 @@ package {
 			f++;
 			if(f==1)
 			{
-				outputText.appendText(Texts.INTRO_TEXT+new InputParser("version").returns[1]);
+				outputText.appendText(Texts.INTRO_TEXT+new InputParser("version").returns[1]+"\n");
 			}
 		}
 
