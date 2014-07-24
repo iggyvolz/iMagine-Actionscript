@@ -1,7 +1,7 @@
 package asunit.framework {
     import asunit.errors.AssertionFailedError;
     import asunit.errors.InstanceNotFoundError;
-    
+
     /**
      * A <code>TestResult</code> collects the results of executing
      * a test case. It is an instance of the Collecting Parameter pattern.
@@ -12,12 +12,12 @@ package asunit.framework {
      * @see Test
      */
     public class TestResult implements TestListener {
-        protected var fFailures:Array;
-        protected var fErrors:Array;
+        public var fFailures:Array;
+        public var fErrors:Array;
         protected var fListeners:Array;
         protected var fRunTests:int;
         private var fStop:Boolean;
-        
+
         public function TestResult() {
             fFailures  = new Array();
             fErrors       = new Array();
@@ -94,7 +94,7 @@ package asunit.framework {
         public function failures():Array {
             return fFailures;
         }
-        
+
         /**
          * Runs a TestCase.
          */
@@ -128,7 +128,7 @@ package asunit.framework {
                 item.startTest(test);
             }
         }
-        
+
         public function startTestMethod(test:Test, method:String):void {
             var len:uint = fListeners.length;
             var item:TestListener;
@@ -137,7 +137,7 @@ package asunit.framework {
                 item.startTestMethod(test, method);
             }
         }
-        
+
         public function endTestMethod(test:Test, method:String):void {
             var len:uint = fListeners.length;
             var item:TestListener;
@@ -146,7 +146,7 @@ package asunit.framework {
                 item.endTestMethod(test, method);
             }
         }
-        
+
         /**
          * Informs the result that a test was completed.
          */
