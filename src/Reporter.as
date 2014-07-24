@@ -1,10 +1,15 @@
 package {
   import flash.utils.ByteArray;
+  import flash.net.navigateToURL;
+  import flash.net.URLRequest;
+  import flash.system.Capabilities;
   public class Reporter
   {
     public function Reporter(testTimes:Array,fFailures:Array,fErrors:Array):void
     {
-      trace(JSON.stringify({"testTimes":handleTestTimes(testTimes),"fFailures":handleFailures(fFailures),"fErrors":handleFailures(fErrors)}));
+      var report:String=JSON.stringify({"iMagineVersion":iMagineVersion.COMMIT_HASH,"flashVersion":Capabilities.version,"testTimes":handleTestTimes(testTimes),"fFailures":handleFailures(fFailures),"fErrors":handleFailures(fErrors)});
+      report=encodeURIComponent(report);
+      navigateToURL(new URLRequest("https://eternityincurakai.com/iMagineReport?report="+report), "_blank");
     }
     public function handleTestTimes(testTimes:Array):Object
     {
