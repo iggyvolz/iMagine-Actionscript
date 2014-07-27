@@ -1,3 +1,4 @@
+#!/bin/bash
 build: generate-version-file
 	mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
