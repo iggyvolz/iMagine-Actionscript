@@ -32,15 +32,5 @@ drone-io: generate-version-file
 	./flex_sdk/bin/mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/Tests.swf ./bin/Tests-`git rev-parse --abbrev-ref HEAD`.swf
-	if [[ "`git rev-parse --abbrev-ref HEAD`" != "master" ]]; then
-	wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-master.swf
-	mv iMagine-master.swf bin
-	wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-master.swf
-	mv Tests-master.swf bin
-	fi
-	if [[ "`git rev-parse --abbrev-ref HEAD`" != "RELEASE_0_1" ]]; then
-	wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-RELEASE_0_1.swf
-	mv iMagine-RELEASE_0_1.swf bin
-	wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-RELEASE_0_1.swf
-	mv Tests-RELEASE_0_1.swf bin
-	fi
+	if [ "`git rev-parse --abbrev-ref HEAD`" == "master" ]; then echo "skip master branch";else wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-master.swf;mv iMagine-master.swf bin;wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-master.swf;mv Tests-master.swf bin;fi
+	if [ "`git rev-parse --abbrev-ref HEAD`" != "RELEASE_0_1" ]; then echo "skip RELEASE_0_1 branch";else wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-RELEASE_0_1.swf;mv iMagine-RELEASE_0_1.swf bin;wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-RELEASE_0_1.swf;mv Tests-RELEASE_0_1.swf bin;fi
