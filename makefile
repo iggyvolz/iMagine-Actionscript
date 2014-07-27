@@ -28,7 +28,7 @@ drone-io: generate-version-file
 	unzip -q flex_sdk_4.6.zip -d flex_sdk
 	./flex_sdk/bin/mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
-	mv src/iMagine.swf ./bin
+	mv src/iMagine.swf ./bin/iMagine-`git rev-parse --abbrev-ref HEAD`.swf
 	./flex_sdk/bin/mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
-	mv src/Tests.swf ./bin
+	mv src/Tests.swf ./bin/Tests-`git rev-parse --abbrev-ref HEAD`.swf
