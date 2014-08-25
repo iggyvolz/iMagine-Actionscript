@@ -1,5 +1,6 @@
 package tests
 {
+  import flash.events.Event;
   import asunit.framework.TestCase;
 
   public class TestMagine extends TestCase
@@ -10,6 +11,11 @@ package tests
       super("test");
     }
     public function test():void
+    {
+      Subjects.reset();
+      addEventListener(Event.ENTER_FRAME,testAfterEnterFrame);
+    }
+    public function testAfterEnterFrame():void
     {
       var array1:Array=[">i.magine(furok)",Texts.I_MAGINE_SUCCESS.replace("%1","Furok"),Texts.FUROK_CATCH_PHRASE,Subjects.SUBJECT_NAMES[0].ucfirst()+" lost 100 energy!  He now has 900 energy!"];
       var array2:Array=new InputParser("i.magine(furok)").returns;

@@ -8,7 +8,7 @@ debug:
 	fdb bin/iMagine.swf
 test: build-test
 	fdb bin/Tests.swf
-build-test: generate-version-file
+build-test: generate-tests generate-version-file
 	mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/Tests.swf ./bin
@@ -22,6 +22,8 @@ generate-version-file:
 	printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
 	git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	printf "\"}}">>src/iMagineVersion.as
+generate-tests:
+	./testmaker
 drone-io: generate-version-file
 	mkdir flex_sdk
 	wget -q http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip

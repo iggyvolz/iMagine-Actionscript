@@ -1,5 +1,6 @@
 package tests
 {
+  import flash.events.Event;
   import asunit.framework.TestCase;
 
   public class TestToTheDreamPlane extends TestCase
@@ -10,6 +11,11 @@ package tests
       super("test");
     }
     public function test():void
+    {
+      Subjects.reset();
+      addEventListener(Event.ENTER_FRAME,testAfterEnterFrame);
+    }
+    public function testAfterEnterFrame():void
     {
       var array1:Array=[">furok.tothedreamplane",Texts.TO_THE_DREAM_PLANE.replace("%1","Furok")];
       var array2:Array=new InputParser("furok.tothedreamplane").returns;

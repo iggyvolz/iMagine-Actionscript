@@ -1,0 +1,32 @@
+#!/usr/local/bin/php
+<?php
+$scan=scandir(__DIR__."/src/subjects");
+$template=file_get_contents(__DIR__."/src/tests/TestMagineTemplate.as");
+foreach($scan as $file)
+{
+  $conts=file_get_contents(__DIR__."/src/subjects/$file");
+  if(strpos($conts,"extends DreamCreature")!==false)
+  {
+    $creature=explode(".as",$file)[0];
+    $owner=explode("\"",explode("owner=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(\"",$conts)[1])[0];
+    file_put_contents(__DIR__."/src/tests/TestMagine".ucfirst($creature).".as",str_replace("%UCFIRSTCREATURE%",ucfirst($creature),str_replace("%LCCREATURE%",strtolower($creature),str_replace("%UCCREATURE%",strtoupper(handleUS($creature)),str_replace("%OWNER%",strtolower($owner),$template)))));
+    //file_put_contents(__DIR__."/src/tests/AllTests.as",file_get_contents(__DIR__."/src/tests/AllTests.as")."\naddTest(new TestMagine".ucfirst($creature)."());");
+  }
+}
+function handleUS($creature)
+{
+  if(ucfirst(strtolower($creature))==$creature)
+  {
+    return strtoupper($creature);
+  }
+  $return_string=$creature[0];
+  for($i=1;$i<strlen($creature);$i++)
+  {
+    if($creature[$i]==strtoupper($creature[$i]))
+    {
+      $return_string.="_";
+    }
+    $return_string.=$creature[$i];
+  }
+  return strtoupper($return_string);
+}
