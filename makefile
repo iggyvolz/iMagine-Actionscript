@@ -8,7 +8,7 @@ debug:
 	$(FLEXPATH)fdb bin/iMagine.swf
 test: build-test
 	$(FLEXPATH)fdb bin/Tests.swf
-build-test: generate-tests generate-version-file
+build-test: generate-version-file
 	$(FLEXPATH)mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/Tests.swf ./bin
