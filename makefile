@@ -22,8 +22,6 @@ generate-version-file:
 	printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
 	git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	printf "\"}}">>src/iMagineVersion.as
-generate-tests:
-	./testmaker
 drone-io: drone-io-prepare build build-test drone-io-archive
 drone-io-prepare:
 	mkdir flex_sdk
