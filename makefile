@@ -34,4 +34,4 @@ drone-io: generate-version-file
 	mv src/Tests.swf ./bin/Tests-`git rev-parse --abbrev-ref HEAD`.swf
 	if [ "`git rev-parse --abbrev-ref HEAD`" = "master" ]; then echo "skip master branch";else wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-master.swf;mv iMagine-master.swf bin;wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-master.swf;mv Tests-master.swf bin;fi
 send:
-	curl --silent -H "Authorization: token $(GITHUB_TOKEN)" https://api.github.com/repos/iggyvolz/iMagine/statuses/$(shell git rev-parse HEAD) --data "{\"state\":\"$(status)\"}"
+	curl --silent -H "Authorization: token $(GITHUB_TOKEN)" https://api.github.com/repos/iggyvolz/iMagine/statuses/$(shell git rev-parse HEAD) --data "{\"state\":\"$(status)\"}">>/dev/null
