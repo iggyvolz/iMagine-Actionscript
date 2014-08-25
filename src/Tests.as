@@ -29,7 +29,7 @@ package {
       }
       if(f>2&&tests.AllTests.api.testCount()==tests.AllTests.api.testsCompleteCount)
       {
-        new Reporter(unittests.getPrinter().testTimes,testResult.fFailures,testResult.fErrors);
+        //new Reporter(unittests.getPrinter().testTimes,testResult.fFailures,testResult.fErrors);
         stage.removeEventListener(Event.ENTER_FRAME,handleEnterFrame);
       }
     }

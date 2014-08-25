@@ -11,8 +11,3 @@ package tests
       super();
       addTest(new TestMagine());
       addTest(new TestMagineAgain());
-      addTest(new TestToTheDreamPlane());
-      addTest(new TestToTheDreamPlaneAgain());
-    }
-  }
-}
