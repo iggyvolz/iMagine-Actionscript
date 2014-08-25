@@ -13,7 +13,7 @@ package tests
     public function test():void
     {
       Subjects.reset();
-      var array1:Array=[">strag.magine(icearboll)",Texts.I_MAGINE_SUCCESS.replace("%1","IceArboll"),Texts.ICE_ARBOLL_CATCH_PHRASE,"Strag lost 100 energy!  He now has 900 energy!"];
+      var array1:Array=[">strag.magine(icearboll)",Texts.I_MAGINE_SUCCESS.replace("%1","Ice Arboll"),Texts.ICE_ARBOLL_CATCH_PHRASE,"Strag lost 100 energy!  He now has 900 energy!"];
       var array2:Array=new InputParser("strag.magine(icearboll)").returns;
       for(var i:uint=0;i<array1.length||i<array2.length;i++)
       {

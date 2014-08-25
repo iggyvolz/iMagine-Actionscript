@@ -13,7 +13,7 @@ package tests
     public function test():void
     {
       Subjects.reset();
-      var array1:Array=[">tony.magine(caverudwott)",Texts.I_MAGINE_SUCCESS.replace("%1","CaveRudwott"),Texts.CAVE_RUDWOTT_CATCH_PHRASE,"Tony lost 100 energy!  He now has 900 energy!"];
+      var array1:Array=[">tony.magine(caverudwott)",Texts.I_MAGINE_SUCCESS.replace("%1","Cave Rudwott"),Texts.CAVE_RUDWOTT_CATCH_PHRASE,"Tony lost 100 energy!  He now has 900 energy!"];
       var array2:Array=new InputParser("tony.magine(caverudwott)").returns;
       for(var i:uint=0;i<array1.length||i<array2.length;i++)
       {
