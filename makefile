@@ -1,15 +1,15 @@
 build: generate-version-file
-	mxmlc src/iMagine.as -debug=true -default-size=550,400
+	$(FLEXPATH)mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/iMagine.swf ./bin
 open:
 	open bin/iMagine.swf
 debug:
-	fdb bin/iMagine.swf
+	$(FLEXPATH)fdb bin/iMagine.swf
 test: build-test
-	fdb bin/Tests.swf
+	$(FLEXPATH)fdb bin/Tests.swf
 build-test: generate-tests generate-version-file
-	mxmlc src/Tests.as -debug=true -default-size=550,400
+	$(FLEXPATH)mxmlc src/Tests.as -debug=true -default-size=550,400
 	mkdir -p bin
 	mv src/Tests.swf ./bin
 generate-version-file:
@@ -24,16 +24,12 @@ generate-version-file:
 	printf "\"}}">>src/iMagineVersion.as
 generate-tests:
 	./testmaker
-drone-io: generate-version-file
+drone-io: drone-io-prepare build build-test drone-io-archive
+drone-io-prepare:
 	mkdir flex_sdk
 	wget -q http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	unzip -q flex_sdk_4.6.zip -d flex_sdk
-	./flex_sdk/bin/mxmlc src/iMagine.as -debug=true -default-size=550,400
-	mkdir -p bin
-	mv src/iMagine.swf ./bin/iMagine-`git rev-parse --abbrev-ref HEAD`.swf
-	./flex_sdk/bin/mxmlc src/Tests.as -debug=true -default-size=550,400
-	mkdir -p bin
-	mv src/Tests.swf ./bin/Tests-`git rev-parse --abbrev-ref HEAD`.swf
+drone-io-archive:
 	if [ "`git rev-parse --abbrev-ref HEAD`" = "master" ]; then echo "skip master branch";else wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-master.swf;mv iMagine-master.swf bin;wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-master.swf;mv Tests-master.swf bin;fi
 send:
 	curl --silent -H "Authorization: token $(GITHUB_TOKEN)" https://api.github.com/repos/iggyvolz/iMagine/statuses/$(shell git rev-parse HEAD) --data "{\"state\":\"$(status)\"}">>/dev/null
