@@ -1,4 +1,4 @@
-#!/usr/local/bin/php
+#!/usr/bin/env php
 <?php
 $scan=scandir(__DIR__."/src/subjects");
 $template=file_get_contents(__DIR__."/src/tests/TestMagineTemplate.as");
