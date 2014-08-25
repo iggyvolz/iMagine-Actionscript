@@ -15,7 +15,7 @@ package subjects {
     {
       e;
       Subjects.theStage.removeEventListener("ownersReady",setOwner);
-      owner=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf("tony")];
+      owner=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf("edyn")];
     }
     public function rootreach(args:Array):Array
     {

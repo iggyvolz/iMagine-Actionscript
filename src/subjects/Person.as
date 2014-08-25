@@ -16,6 +16,7 @@ package subjects {
 				return [Texts.FUNCTION_REQUIRES_PARAMETER.replace("%1","magine")];
 			}
 			var dreamCreature:String=args[0];
+			trace(dreamCreature+" is in "+animite.join(",")+"???");
 			if(animite.indexOf(dreamCreature)==-1)
 			{
 				return [Texts.INVALID_ANIMITE.replace("%1",args[0])];
