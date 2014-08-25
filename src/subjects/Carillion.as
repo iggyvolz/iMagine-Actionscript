@@ -9,12 +9,12 @@ package subjects {
       creatureName="Carillion";
       inDreamPlane=true;
       catchPhrase=Texts.CARILLION_CATCH_PHRASE;
-      addEventListener(Event.ENTER_FRAME,setOwner);
+      Subjects.theStage.addEventListener("ownersReady",setOwner);
     }
     public function setOwner(e:*):void
     {
       e;
-      removeEventListener(Event.ENTER_FRAME,setOwner);
+      Subjects.theStage.removeEventListener("ownersReady",setOwner);
       owner=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf("tony")];
     }
   }

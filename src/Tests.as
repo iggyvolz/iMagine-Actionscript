@@ -14,6 +14,7 @@ package {
     public var unittests:TestRunner;
     public function Tests():void
     {
+      Subjects.theStage=stage;
       new iMagine;
       stage.addEventListener(Event.ENTER_FRAME,handleEnterFrame);
     }

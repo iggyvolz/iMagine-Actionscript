@@ -24,8 +24,6 @@ package {
 		public var inputTextFormat:TextFormat=new TextFormat;
 		public var first:Boolean=true;
 		public function iMagine() {
-			Subjects.SUBJECT_OBJECTS;
-			Subjects.SUBJECT_NAMES;
 			if(api==null)
 			{
 				api=this;
@@ -34,6 +32,13 @@ package {
 			{
 				return;
 			}
+			if(stage)
+			{
+				Subjects.theStage=stage;
+				stage.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
+				stage.addEventListener(Event.ENTER_FRAME,handleEnterFrame);
+			}
+			Subjects.reset();
 			addChild(outputText);
 			addChild(inputText);
 			inputText.type=TextFieldType.INPUT;
@@ -44,11 +49,6 @@ package {
 			inputText.y=380;
 			inputText.height=20;
 			outputText.height=380;
-			if(stage)
-			{
-				stage.addEventListener(KeyboardEvent.KEY_DOWN, handleKeyDown);
-				stage.addEventListener(Event.ENTER_FRAME,handleEnterFrame);
-			}
 		}
 
 		private function handleEnterFrame(event:Event):void{

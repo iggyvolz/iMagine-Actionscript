@@ -13,10 +13,6 @@ package tests
     public function test():void
     {
       Subjects.reset();
-      addEventListener(Event.ENTER_FRAME,testAfterEnterFrame);
-    }
-    public function testAfterEnterFrame():void
-    {
       var array1:Array=[">furok.tothedreamplane",Texts.TO_THE_DREAM_PLANE.replace("%1","Furok")];
       var array2:Array=new InputParser("furok.tothedreamplane").returns;
       for(var i:uint=0;i<array1.length||i<array2.length;i++)
