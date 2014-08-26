@@ -23,7 +23,6 @@ package tests
       addTest(new TestMagineDrowl());
       addTest(new TestMagineDrush());
       addTest(new TestMagineFoamotos());
-      addTest(new TestMagineForestPlyth());
       addTest(new TestMagineFreep());
       addTest(new TestMagineFurok());
       addTest(new TestMagineGarganor());

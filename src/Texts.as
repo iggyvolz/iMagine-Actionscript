@@ -42,7 +42,6 @@ package {
 		public static const DJARMANDER_ICE_BOLT         : String = "Djarmander, Ice Bolt!";
 		public static const DJARMANDER_FREEZE_CLAWS     : String = "Djarmander, Freeze Claws!";
 		public static const DJARMANDER_BLIZZARD_BLAST   : String = "Djarmander, Blizzard Blast!";
-		public static const FOREST_PLITH_CATCH_PHRASE   : String = "Forest Plith is ready!";
 		public static const GOOGATHAN_CATCH_PHRASE      : String = "Hope I can stick around!";
 		public static const HEPPESWIP_CATCH_PHRASE      : String = "Is Furok around?";
 		public static const HUBRAM_CATCH_PHRASE         : String = "Hubram is here!";
@@ -69,7 +68,6 @@ package {
 		public static const SZHAR_CATCH_PHRASE          : String = "Szhar, reporting for duty!";
 		public static const CARILLION_CATCH_PHRASE      : String = "What needs to be destroyed?"
 		public static const FOAMOTOS_CATCH_PHRASE       : String = "Foamotos, in the house!";
-		public static const FOREST_PLYTH_CATCH_PHRASE   : String = "Forest Plyth, at your service!";
 		public static const GARGANOR_CATCH_PHRASE       : String = "Garganor, ready to battle!";
 		public static const HUBRUM_CATCH_PHRASE         : String = "Hubrum, preparing to fight!";
 		public static const ICE_ARBOLL_CATCH_PHRASE     : String = "Is it cold in here or is it just me?";
