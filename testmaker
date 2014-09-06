@@ -7,7 +7,7 @@ $templates=[];
 foreach($templates_scan as $fname)
 {
   if($fname[0]==".")continue;
-  $templates[$fname]=$fname=file_get_contents(__DIR__."/src/testsuite/templates/$fname");
+  $templates[$fname]=file_get_contents(__DIR__."/src/testsuite/templates/$fname");
 }
 foreach($auto_scan as $fname)
 {
