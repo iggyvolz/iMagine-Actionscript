@@ -26,9 +26,9 @@ package {
       {
         unittests = new TestRunner();
         stage.addChild(unittests);
-        testResult=unittests.start(tests.AllTests, null, TestRunner.SHOW_TRACE);
+        testResult=unittests.start(AllTests, null, TestRunner.SHOW_TRACE);
       }
-      if(f>2&&tests.AllTests.api.testCount()==tests.AllTests.api.testsCompleteCount)
+      if(f>2&&AllTests.api.testCount()==AllTests.api.testsCompleteCount)
       {
         //new Reporter(unittests.getPrinter().testTimes,testResult.fFailures,testResult.fErrors);
         stage.removeEventListener(Event.ENTER_FRAME,handleEnterFrame);
