@@ -1,8 +1,13 @@
 #!/usr/bin/env php
 <?php
-$scan=scandir(__DIR__."/src/subjects");
-$templates=["Magine"=>file_get_contents(__DIR__."/src/tests/TestMagineTemplate.as"),"ToTheDreamPlane"=>file_get_contents(__DIR__."/src/tests/TestToTheDreamPlaneTemplate.as")];
-foreach($scan as $file)
+$subjects_scan=scandir(__DIR__."/src/subjects");
+$templates_scan=scandir(__DIR__."/src/testsuite/templates");
+$templates=[];
+foreach($templates_scan as $fname)
+{
+  $templates[explode(".",$fname)[0]]=file_get_contents(__DIR__."/src/testsuite/templates/$fname");
+}
+foreach($subjects_scan as $file)
 {
   $conts=file_get_contents(__DIR__."/src/subjects/$file");
   if(strpos($conts,"extends DreamCreature")!==false)
@@ -11,8 +16,8 @@ foreach($scan as $file)
     $owner=explode("\"",explode("owner=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(\"",$conts)[1])[0];
     foreach($templates as $test=>$template)
     {
-      file_put_contents(__DIR__."/src/tests/Test$test".ucfirst($creature).".as",str_replace("%PARSEDCREATURE%",handleParsed($creature),str_replace("%LCCREATURE%",strtolower($creature),str_replace("%UCCREATURE%",strtoupper(handleUS($creature)),str_replace("%OWNER%",strtolower($owner),str_replace("%OWNER_GENDER%",(strtolower($owner)=="edyn")?("She"):("He"),str_replace("%UCOWNER%",ucfirst(strtolower($owner)),str_replace("%UCFIRSTCREATURE%",$creature,$template))))))));
-      //file_put_contents(__DIR__."/src/tests/AllTests.as",file_get_contents(__DIR__."/src/tests/AllTests.as")."\naddTest(new Test$test".ucfirst($creature)."());");
+      file_put_contents(__DIR__."/src/testsuite/Test$test".ucfirst($creature).".as",str_replace("%PARSEDCREATURE%",handleParsed($creature),str_replace("%LCCREATURE%",strtolower($creature),str_replace("%UCCREATURE%",strtoupper(handleUS($creature)),str_replace("%OWNER%",strtolower($owner),str_replace("%OWNER_GENDER%",(strtolower($owner)=="edyn")?("She"):("He"),str_replace("%UCOWNER%",ucfirst(strtolower($owner)),str_replace("%UCFIRSTCREATURE%",$creature,$template))))))));
+      //file_put_contents(__DIR__."/src/testsuite/tests/AllTests.as",file_get_contents(__DIR__."/src/tests/AllTests.as")."\naddTest(new Test$test".ucfirst($creature)."());");
     }
   }
 }
