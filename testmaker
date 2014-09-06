@@ -39,7 +39,7 @@ $conts=file_get_contents(__DIR__."/src/testsuite/AllTestsTemplate");
 $tests_part="";
 foreach($tests as $test)
 {
-  $tests_part.="      addTest(new Test$test());\n";
+  $tests_part.="      addTest(new $test());\n";
 }
 $conts=str_replace("%TESTS%",$tests_part,$conts);
 file_put_contents(__DIR__."/src/testsuite/AllTests.as",$conts);
