@@ -1,8 +1,8 @@
 package testsuite
 {
   import asunit.framework.TestSuite;
-  import tests.auto.*;
-  import tests.manual.*;
+  import testsuite.tests.auto.*;
+  import testsuite.tests.manual.*;
 
   public class AllTests extends TestSuite
   {
