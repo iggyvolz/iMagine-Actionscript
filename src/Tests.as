@@ -4,7 +4,7 @@ package {
   import asunit.textui.ResultPrinter;
   import flash.display.Sprite;
   import flash.events.*;
-  import tests.AllTests;
+  import testsuite.AllTests;
   import flash.text.TextField;
   public class Tests extends Sprite
   {

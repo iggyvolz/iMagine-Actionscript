@@ -1,4 +1,4 @@
-package tests
+package testsuite.tests.manual
 {
   import flash.events.Event;
   import asunit.framework.TestCase;
