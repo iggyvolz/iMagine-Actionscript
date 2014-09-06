@@ -5,6 +5,7 @@ $templates_scan=scandir(__DIR__."/src/testsuite/templates");
 $templates=[];
 foreach($templates_scan as $fname)
 {
+  if($fname[0]==".")continue;
   $templates[explode(".",$fname)[0]]=file_get_contents(__DIR__."/src/testsuite/templates/$fname");
 }
 foreach($subjects_scan as $file)
@@ -16,8 +17,8 @@ foreach($subjects_scan as $file)
     $owner=explode("\"",explode("owner=Subjects.SUBJECT_OBJECTS[Subjects.SUBJECT_NAMES.indexOf(\"",$conts)[1])[0];
     foreach($templates as $test=>$template)
     {
-      file_put_contents(__DIR__."/src/testsuite/Test$test".ucfirst($creature).".as",str_replace("%PARSEDCREATURE%",handleParsed($creature),str_replace("%LCCREATURE%",strtolower($creature),str_replace("%UCCREATURE%",strtoupper(handleUS($creature)),str_replace("%OWNER%",strtolower($owner),str_replace("%OWNER_GENDER%",(strtolower($owner)=="edyn")?("She"):("He"),str_replace("%UCOWNER%",ucfirst(strtolower($owner)),str_replace("%UCFIRSTCREATURE%",$creature,$template))))))));
-      //file_put_contents(__DIR__."/src/testsuite/tests/AllTests.as",file_get_contents(__DIR__."/src/tests/AllTests.as")."\naddTest(new Test$test".ucfirst($creature)."());");
+      file_put_contents(__DIR__."/src/testsuite/tests/Test$test".ucfirst($creature).".as",str_replace("%PARSEDCREATURE%",handleParsed($creature),str_replace("%LCCREATURE%",strtolower($creature),str_replace("%UCCREATURE%",strtoupper(handleUS($creature)),str_replace("%OWNER%",strtolower($owner),str_replace("%OWNER_GENDER%",(strtolower($owner)=="edyn")?("She"):("He"),str_replace("%UCOWNER%",ucfirst(strtolower($owner)),str_replace("%UCFIRSTCREATURE%",$creature,$template))))))));
+      //file_put_contents(__DIR__."/src/testsuite/AllTests.as",file_get_contents(__DIR__."/src/tests/AllTests.as")."\naddTest(new Test$test".ucfirst($creature)."());");
     }
   }
 }
