@@ -1,3 +1,5 @@
+target:=$(shell cat .settings/target)
+FLEXPATH:=$(shell cat .settings/FLEXPATH)
 build: generate-version-file
 	$(FLEXPATH)mxmlc src/iMagine.as -debug=true -default-size=550,400
 	mkdir -p bin
@@ -33,3 +35,10 @@ send:
 	curl --silent -H "Authorization: token $(GITHUB_TOKEN)" https://api.github.com/repos/iggyvolz/iMagine/statuses/$(shell git rev-parse HEAD) --data "{\"state\":\"$(status)\"}">>/dev/null
 generate-tests:
 	./testmaker
+setup:
+	mkdir -p .settings
+	echo "iMagine">.settings/target
+	dirname `which mxmlc`>.settings/FLEXPATH
+setdefault:
+	echo "$(target)">.settings/target
+	echo "$(FLEXPATH)">.settings/FLEXPATH
