@@ -99,5 +99,9 @@ package subjects {
 			energy-=damage;
 			return toReturn;
 		}
+		public function help(args:Array):Array
+		{
+			return ["Please see http://iggyvolz.github.io/iMagine/documentation.html for help."];
+		}
 	}
 }

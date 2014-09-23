@@ -32,6 +32,10 @@ package subjects {
 		{
 			return owner.version(args);
 		}
+		public function help(args:Array):Array
+		{
+			return owner.help(args);
+		}
 		public function _damage(damage:uint):Array
 		{
 			var toReturn:Array=[];
