@@ -38,7 +38,7 @@ generate-tests:
 setup:
 	mkdir -p .settings
 	echo "iMagine">.settings/target
-	dirname `which mxmlc`>.settings/FLEXPATH
+	if [ "`which mxmlc`" = "" ]; then echo "">.settings/FLEXPATH; echo "WARNING: no mxmlc detected.  You must install it before building.  If you are setting FLEXPATH manually, ignore this error."; else dirname "`which mxmlc`">.settings/FLEXPATH;fi
 setdefault:
 	echo "$(target)">.settings/target
 	echo "$(FLEXPATH)">.settings/FLEXPATH
