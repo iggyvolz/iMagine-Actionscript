@@ -26,9 +26,11 @@ generate-version-file:
 	@printf "\"}}">>src/iMagineVersion.as
 drone-io: drone-io-prepare generate-tests build build-test drone-io-archive
 drone-io-prepare:
+	@make setdefault FLEXPATH="flex_sdk/bin/"
 	@mkdir flex_sdk
 	@wget -q http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	@unzip -q flex_sdk_4.6.zip -d flex_sdk
+	@unlink flex_sdk_4.6.zip
 drone-io-archive:
 	@if [ "`git rev-parse --abbrev-ref HEAD`" = "master" ]; then mv bin/Tests.swf bin/Tests-master.swf;mv bin/iMagine.swf bin/iMagine-master.swf;else wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-master.swf;mv iMagine-master.swf bin;wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-master.swf;mv Tests-master.swf bin;fi
 send:
