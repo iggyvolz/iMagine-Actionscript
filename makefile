@@ -24,7 +24,7 @@ generate-version-file:
 	@printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
 	@git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	@printf "\"}}">>src/iMagineVersion.as
-drone-io: drone-io-prepare generate-tests build build-test drone-io-archive
+drone-io: setup drone-io-prepare generate-tests build build-test drone-io-archive
 drone-io-prepare:
 	@make setdefault FLEXPATH="flex_sdk/bin/"
 	@mkdir flex_sdk
