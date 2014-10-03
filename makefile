@@ -1,5 +1,5 @@
-target:=$(shell cat .settings/target)
-FLEXPATH:=$(shell cat .settings/FLEXPATH)
+target:=$(shell (cat .settings/target 2&>1)||echo "")
+FLEXPATH:=$(shell (cat .settings/FLEXPATH 2&>1)||echo "")
 build: generate-version-file
 	@$(FLEXPATH)mxmlc src/iMagine.as -debug=true -default-size=550,400
 	@mkdir -p bin
