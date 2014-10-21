@@ -97,10 +97,12 @@ $words=[
 ];
 ob_start();
 ?>package {
-	public class Texts {<?php
+	public class Texts {
+<?php
 foreach($words as $given=>$received)
 {
-  echo "public static const $given : String = "$received";
+  $given=str_pad($given,27," ");
+  echo "      public static const $given : String = \"$received\";\n";
 }
 ?>
 	}
