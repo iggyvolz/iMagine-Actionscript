@@ -1,6 +1,6 @@
 target:=$(shell if [ -f ".settings/target" ];then cat .settings/target;else echo "";fi)
 FLEXPATH:=$(shell if [ -f ".settings/FLEXPATH" ];then cat .settings/FLEXPATH;else echo "";fi)
-build: generate-version-file
+build: generate-files
 	@$(FLEXPATH)mxmlc src/iMagine.as -debug=true -default-size=550,400
 	@mkdir -p bin
 	@mv src/iMagine.swf ./bin
@@ -10,10 +10,11 @@ debug:
 	@$(FLEXPATH)fdb bin/iMagine.swf
 test: build-test
 	@$(FLEXPATH)fdb bin/Tests.swf
-build-test: generate-version-file
+build-test: generate-files
 	@$(FLEXPATH)mxmlc src/Tests.as -debug=true -default-size=550,400
 	@mkdir -p bin
 	@mv src/Tests.swf ./bin
+generate-files: generate-version-file generate-text-file generate-tests
 generate-version-file:
 	@rm -f src/iMagineVersion.as
 	@touch src/iMagineVersion.as
@@ -24,6 +25,7 @@ generate-version-file:
 	@printf "\";public static const GIT_DESCRIBE:String=\"">>src/iMagineVersion.as
 	@git describe --tags|tr -d '\n'>>src/iMagineVersion.as
 	@printf "\"}}">>src/iMagineVersion.as
+generate-text-file:
 drone-io: drone-io-prepare generate-tests build build-test drone-io-archive
 drone-io-prepare:
 	@mkdir flex_sdk
