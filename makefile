@@ -30,6 +30,8 @@ drone-io-prepare:
 	@wget -q http://apache.mesi.com.ar/flex/4.13.0/binaries/apache-flex-sdk-4.13.0-bin.tar.gz
 	@tar xf apache-flex-sdk-4.13.0-bin.tar.gz
 	@unlink apache-flex-sdk-4.13.0-bin.tar.gz
+	@rm -rf apache-flex-sdk-4.13.0-bin/frameworks/libs/player
+	@git clone git://github.com/nexussays/playerglobal.git apache-flex-sdk-4.13.0-bin/frameworks/libs/player
 drone-io-archive:
 	@if [ "`git rev-parse --abbrev-ref HEAD`" = "master" ]; then mv bin/Tests.swf bin/Tests-master.swf;mv bin/iMagine.swf bin/iMagine-master.swf;else wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/iMagine-master.swf;mv iMagine-master.swf bin;wget https://drone.io/github.com/iggyvolz/iMagine/files/bin/Tests-master.swf;mv Tests-master.swf bin;fi
 send:
