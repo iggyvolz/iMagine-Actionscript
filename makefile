@@ -30,6 +30,8 @@ drone-io-prepare:
 	@wget -q http://apache.mesi.com.ar/flex/4.13.0/binaries/apache-flex-sdk-4.13.0-bin.tar.gz
 	@tar xf apache-flex-sdk-4.13.0-bin.tar.gz
 	@unlink apache-flex-sdk-4.13.0-bin.tar.gz
+	@unlink apache-flex-sdk-4.13.0-bin/frameworks/flex-config.xml
+	@mv flex-config.xml apache-flex-sdk-4.13.0-bin/frameworks/flex-config.xml
 	@rm -rf apache-flex-sdk-4.13.0-bin/frameworks/libs/player
 	@git clone git://github.com/nexussays/playerglobal.git apache-flex-sdk-4.13.0-bin/frameworks/libs/player
 drone-io-archive:
