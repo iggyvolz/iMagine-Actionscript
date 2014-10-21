@@ -1,7 +1,6 @@
 target:=$(shell if [ -f ".settings/target" ];then cat .settings/target;else echo "";fi)
 FLEXPATH:=$(shell if [ -f ".settings/FLEXPATH" ];then cat .settings/FLEXPATH;else echo "";fi)
 build: generate-version-file
-	@echo "FLEXPATH: $(FLEXPATH)"
 	@$(FLEXPATH)mxmlc src/iMagine.as -debug=true -default-size=550,400
 	@mkdir -p bin
 	@mv src/iMagine.swf ./bin
@@ -27,7 +26,6 @@ generate-version-file:
 	@printf "\"}}">>src/iMagineVersion.as
 drone-io: drone-io-prepare generate-tests build build-test drone-io-archive
 drone-io-prepare:
-	@make setdefault FLEXPATH="flex_sdk/bin/"
 	@mkdir flex_sdk
 	@wget -q http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip
 	@unzip -q flex_sdk_4.6.zip -d flex_sdk
