@@ -1,6 +1,7 @@
 target:=$(shell if [ -f ".settings/target" ];then cat .settings/target;else echo "";fi)
 FLEXPATH:=$(shell if [ -f ".settings/FLEXPATH" ];then cat .settings/FLEXPATH;else echo "";fi)
 build: generate-version-file
+	@echo "FLEXPATH: $(FLEXPATH)"
 	@$(FLEXPATH)mxmlc src/iMagine.as -debug=true -default-size=550,400
 	@mkdir -p bin
 	@mv src/iMagine.swf ./bin
