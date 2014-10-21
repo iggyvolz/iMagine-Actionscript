@@ -2,7 +2,8 @@
 <?php
 if(!function_exists("_"))
 {
-  die("ERROR: Function _ does not exist.  Please compile PHP with gettext\n");
+  echo "ERROR: Function _ does not exist.  Please compile PHP with gettext.  Continuing with words as definitions...\n";
+  function _($foo){return $foo;}
 }
 $words=[
   "FUNCTION_REQUIRES_PARAMETER" => _("FUNCTION_REQUIRES_PARAMETER"),
@@ -94,4 +95,15 @@ $words=[
   "UGGER_ROOT_LASH" => _("UGGER_ROOT_LASH"),
   "INTRO_TEXT" => _("INTRO_TEXT"),
 ];
-var_dump($words);
+ob_start();
+?>package {
+	public class Texts {<?php
+foreach($words as $given=>$received)
+{
+  echo "public static const $given : String = "$received";
+}
+?>
+	}
+}<?php
+$conts=ob_get_clean();
+file_put_contents("src/Texts.as",$conts);
