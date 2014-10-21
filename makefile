@@ -31,7 +31,7 @@ drone-io-prepare:
 	@tar xf apache-flex-sdk-4.13.0-bin.tar.gz
 	@unlink apache-flex-sdk-4.13.0-bin.tar.gz
 	@unlink apache-flex-sdk-4.13.0-bin/frameworks/flex-config.xml
-	@mv flex-config.xml apache-flex-sdk-4.13.0-bin/frameworks/flex-config.xml
+	@wget https://dl.dropboxusercontent.com/u/62666232/iMagine-flex-config-for-drone-io.xml -O apache-flex-sdk-4.13.0-bin/frameworks/flex-config.xml
 	@rm -rf apache-flex-sdk-4.13.0-bin/frameworks/libs/player
 	@git clone git://github.com/nexussays/playerglobal.git apache-flex-sdk-4.13.0-bin/frameworks/libs/player
 drone-io-archive:
